@@ -1,0 +1,153 @@
+/* ------------------------------------------ ADMIN ------------------------------------------*/
+.div-botones-admin{
+  text-align: center;
+  margin-top: 4%;
+  margin-bottom: 4%;
+}
+.botones-admin {
+  background-color: #c6b1776d;
+  border: 1px solid black ;
+  color: black ;
+  text-transform: uppercase;
+  border-radius: 0.5rem;
+  font-size: 2.5rem;
+  font-family: inherit;
+  cursor: pointer;
+  font-weight: 400;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding: 5% 20%
+  }
+
+  /* .botones-admin:hover {
+  background-color: white;
+  color:#c4ab5f ;
+  } */
+/* ------------------------------------------ ADMIN ------------------------------------------*/
+.create{
+  display: grid;
+  width: 100%;
+  height: 100%;
+  place-items: center;
+  opacity: 0.9;
+}  
+
+.container-create{
+  background: #fff;
+  max-width: 350px;
+  width: 380px;
+  padding: 15px;
+  border-radius: 20px;
+  box-shadow: 0 12px 22px rgba(0, 0, 0, 0.775);
+  margin-top: 25px; 
+  margin-bottom: 35px;
+}
+.input-box{
+  font-size: 15px;
+}
+
+.container-create form .title{
+  font-size: 30px;
+  font-weight: 600;
+  margin: 20px 0 10px 0;
+  position: relative;
+}
+
+.container-create form .input-box{
+  width: 100%;
+  height: 45px;
+  margin-top: 40px;
+  position: relative;
+}
+.container-create form .input-box input{
+  width: 100%;
+  height: 100%;
+  /* font-size: 16px; */
+  border: linear;
+  border-color: rgba(128, 128, 128, 0.855);
+}
+
+/* ------------------------------------------ BUTTON ------------------------------------------*/
+
+.cssbuttons-io-button {
+  background: #5fc4ae;
+  color: black;
+  font-family: inherit;
+  padding: 0.35em;
+  padding-left: 1.2em;
+  font-size: 17px;
+  font-weight: 500;
+  border-radius: 0.9em;
+  border: none;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  box-shadow: inset 0 0 1.6em -0.6em #5fc4ae;
+  overflow: hidden;
+  position: relative;
+  height: 2.8em;
+  padding-right: 3.3em;
+}
+
+.cssbuttons-io-button .icon {
+  background: white;
+  margin-left: 1em;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.2em;
+  width: 2.2em;
+  border-radius: 0.7em;
+  box-shadow: 0.1em 0.1em 0.6em 0.2em #5fc4ae;
+  right: 0.3em;
+  transition: all 0.3s;
+}
+
+.cssbuttons-io-button:hover .icon {
+  width: calc(100% - 0.6em);
+}
+
+.cssbuttons-io-button .icon svg {
+  width: 1.1em;
+  transition: transform 0.3s;
+  color: #5fc4ae;
+}
+
+.cssbuttons-io-button:hover .icon svg {
+  transform: translateX(0.1em);
+}
+
+.cssbuttons-io-button:active .icon {
+  transform: scale(0.95);
+}
+
+
+/* ------------------------------------------ Edit ------------------------------------------*/
+
+.create-edit{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  opacity: 0.9;
+} 
+
+.container-create-edit{
+  background: #fff;
+  max-width: 350px;
+  width: 380px;
+  padding: 15px;
+  border-radius: 20px;
+  box-shadow: 0 12px 22px rgba(0, 0, 0, 0.775);
+  margin-top: 20px; 
+  margin-bottom: 20px;
+}
+.input-box-edit{
+  font-size: 15px;
+  font-weight: bold;
+  padding: 15px;
+  margin: 8px;
+  font-size: 16px;
+  margin-top: 25px;
+}

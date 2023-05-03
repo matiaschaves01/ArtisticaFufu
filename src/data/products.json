@@ -1,0 +1,68 @@
+[
+ {
+  "id": 1676136786181,
+  "name": "Cajon Grande",
+  "price": "544",
+  "image": [
+   {
+    "id": 1676136786181,
+    "name": "product-1676136786178.jpg"
+   }
+  ]
+ },
+ {
+  "id": 1676137664680,
+  "name": "Macetero 2",
+  "price": "677",
+  "image": [
+   {
+    "id": 1676137664680,
+    "name": "product-1676137664678.jpg"
+   }
+  ]
+ },
+ {
+  "id": 1676139096497,
+  "name": "Mesa de Luz",
+  "price": "7888",
+  "image": [
+   {
+    "id": 1676139096497,
+    "name": "product-1676139096491.jpg"
+   }
+  ]
+ },
+ {
+  "id": 1676139204460,
+  "name": "Servilletero Corona",
+  "price": "34124",
+  "image": [
+   {
+    "id": 1676139204460,
+    "name": "product-1676139204457.jpg"
+   }
+  ]
+ },
+ {
+  "id": 1676139263253,
+  "name": "Arco iris",
+  "price": "123",
+  "image": [
+   {
+    "id": 1676139263253,
+    "name": "product-1676139263247.jpg"
+   }
+  ]
+ },
+ {
+  "id": 1676139287167,
+  "name": "Caja de  Bombom",
+  "price": "1212",
+  "image": [
+   {
+    "id": 1676139287167,
+    "name": "product-1676139287163.jpg"
+   }
+  ]
+ }
+]
