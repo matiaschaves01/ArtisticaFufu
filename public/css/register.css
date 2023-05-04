@@ -162,6 +162,11 @@ form .category label .dot{
     color: #5fc4ae;
     border: 1px solid #5fc4ae;
     }
+
+
+.input-error{
+  color: red !important;
+}
    @media(max-width: 584px){
     .container-register{
     max-width: 100%;

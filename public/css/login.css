@@ -45,7 +45,14 @@ body{
   box-shadow: 0 12px 22px rgba(0, 0, 0, 0.775);
   margin-top: 50px; 
 }
-  
+
+.recordame{
+  font-size: 18px;
+  padding: 8px;
+  margin: 10px;
+  text-align: center;
+}
+
 .titulo-fufu i {
   font-size: 2rem;
 }
