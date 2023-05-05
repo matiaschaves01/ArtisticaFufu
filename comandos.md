@@ -1,5 +1,5 @@
                             DATA UTIL / ATAJOS / TIPS
-                    Para que vayamos tirandonos la data entre todos 👍🏽
+        
 
             Comentar todo: (Mac) CMND + K + C (Windows) CONTRL + K + C
             Descomentar todo : (Windows) CONTRL + K + U
@@ -7,7 +7,7 @@
             Cambiar palabras repetidas a la vez: CONTRL + D / tambien apretando OPTION en todos los lugares a editar
             Control + C: Frena lo que este corriendo en la terminal
 
-            ------------- MODULO 2 - Metodologias agiles (GitHub)-------------
+            ------------- Metodologias agiles (GitHub)-------------
             - git init (inicia repositorio local, solo se usa una vez al princpio)
             - git commit -m "first commit" (comitear)
             - git branch -M main
@@ -27,11 +27,11 @@
                     - git checkout . [descarta los cambios que hice]
                     - git merge nombredelarama [une las dos ramas]
  
-            ------------- MODULO 4 - Anatomia de un sitio WEB -------------
+            -------------- Anatomia de un sitio WEB -------------
             - npm install / npm init -y: crea un package json
             - app.listen(): pone a correr un servidor
             - Estructura basica de un archivo HTML: escribir ! seguido de enter
             - La ubicacion del archivo en el cual me encuentro: __dirname
             - Emmet abreviation: te facilita la creacion de etiquetas html
     
-            ------------- MODULO 5 - EXPRESS ------------------------------- 
+            -------------------------------------------- 
