@@ -1,16 +1,6 @@
 S P R I N T #
 -------------
 
-RENDER
-https://fufu.onrender.com
-
-COLABORADORES
-Matias Chaves,
-Agustín Darboure, 
-Nacho Lanusse,
-Jorge Revette,
-Oliver Steward,
-
 WIREFRAMES
 - Home: https://wireframe.cc/Ti9kMC
 - Detalle del producto: https://wireframe.cc/5p4s9t
