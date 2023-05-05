@@ -2,16 +2,6 @@ const formulario = document.getElementById("formulario")
 
 const inputs = document.querySelectorAll('#formulario input');
 
-const validarFormulario2 = (e) => {
-    // const nombre = document.querySelector("#nombre")
-    // const apellido = document.querySelector("#apellido")
-    // const nombreUsuario = document.querySelector("#nombreUsuario")
-    // const emailRegistro = document.querySelector("#emailRegistro")
-    // const numeroTelefono = document.querySelector("#numeroTelefono")
-   
-    
-}
-
 inputs.forEach((input) => {
     input.addEventListener('keyup', validarFormulario);
     input.addEventListener('blur', validarFormulario);

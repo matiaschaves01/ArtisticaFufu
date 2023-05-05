@@ -8,31 +8,32 @@
         <h3>
     <main class="create">  
         <div class="container-create">
-            <form method="post" action="/products/create" enctype="multipart/form-data">
+            <form id="form-create" method="post" action="/products/create" enctype="multipart/form-data">
                 <div class="input-box underline"> 
+
                 <label for="name">Nombre</label>
-                <input type="text" name="name" value="<%= locals.oldBody && oldBody.name ? oldBody.name:'' %>">
+                <input id="name" type="text" name="name" value="<%= locals.oldBody && oldBody.name ? oldBody.name:'' %>">
                     <% if (locals.error && error.name) { %>
                      <p><%= error.name.msg %></p>
                     <% } %>
                 </div>
                 <div class="input-box">
                         <label for="year">Descripcion</label>
-                        <input type="text" name="description" value="<%= locals.oldBody && oldBody.price ? oldBody.price:'' %>">
-                        <% if (locals.error && error.price) { %>
-                            <p><%= error.price.msg %></p>
+                        <input id="description" type="text" name="description" value="<%= locals.oldBody && oldBody.price ? oldBody.price:'' %>">
+                        <% if (locals.error && error.description) { %>
+                            <p><%= error.description.msg %></p>
                             <% } %>
                         </div>
                         <div class="input-box">
                             <label for="year">Capacidad</label>
                             <input type="text" name="capacity" value="<%= locals.oldBody && oldBody.price ? oldBody.price:'' %>">
-                            <% if (locals.error && error.price) { %>
+                            <% if (locals.error && error.capacity) { %>
                                 <p><%= error.price.msg %></p>
                                <% } %>
                             </div>
                         <div class="input-box">
                             <label for="year">Precio</label>
-                            <input type="number" name="price" value="<%= locals.oldBody && oldBody.price ? oldBody.price:'' %>">
+                            <input id="price" type="number" name="price" value="<%= locals.oldBody && oldBody.price ? oldBody.price:'' %>">
                             <% if (locals.error && error.price) { %>
                                 <p><%= error.price.msg %></p>
                                 <% } %>
@@ -53,7 +54,7 @@
                                 <% }) %>
                             </select>
                             </div>
-                            <button class="cssbuttons-io-button"> Crear Producto
+                            <button id="botonCreate" type="submit" class="cssbuttons-io-button"> Crear Producto
                                 <div class="icon">
                                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"></path></svg>
                                 </div>
@@ -62,7 +63,10 @@
                 </h3>
             </form>
         </main>
-</body>
-<!-- <%- include('../partials/footer.ejs') %>  -->
+        
+    </body>
+    <!-- <%- include('../partials/footer.ejs') %>  -->
+    <script src="/js/createValidation.js"></script>
+    <script src="/js/validationFunction.js"></script>
 
 </html>

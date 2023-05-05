@@ -45,8 +45,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 2px;
+    padding: 5rem 2px;
     margin: 50px;
+    
 }
 .btn__group{
     display: inline-block;
@@ -68,6 +69,10 @@
 	background: linear-gradient(to right,#5fc4ae 0%, #43897a 100%);
    
 }
+
+.addcart{
+    width: 185px;
+}
 .price{
     font-weight: 700;
     font-size: 20px;
@@ -85,3 +90,11 @@
         gap:20px
     }
 }
+
+/* @media screen and (min-width:425px) {
+
+    .bottom{
+        justify-content: flex-start;
+        gap:20px
+    }
+} */

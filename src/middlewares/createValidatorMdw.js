@@ -6,6 +6,10 @@ const createMiddleware = [
         .notEmpty().withMessage('Por favor ingrese su nombre').bail()
         .isLength({min: 2}).withMessage('Minimo 2 caracteres')
         .isLength({max: 20}).withMessage('Maximo 20 caracteres'),
+        body('description')
+        .notEmpty().withMessage('Por favor ingrese una descripcion').bail()
+        .isLength({min: 60}).withMessage('Minimo 60 caracteres')
+        .isLength({max: 500}).withMessage('Maximo 500 caracteres'),
     body('price')
         .notEmpty().withMessage('Por favor ingrese un precio').bail()
         .isNumeric().withMessage('Por favor ingrese un valor numerico'),
