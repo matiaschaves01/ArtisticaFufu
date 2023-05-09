@@ -18,7 +18,7 @@ module.exports = (sequelize, DataType) => {
                     type: DataType.STRING(45)
             },
             description:{
-                type:DataType.STRING(255),
+                type:DataType.STRING(3500),
                 allowNull: false
             },
             image:{

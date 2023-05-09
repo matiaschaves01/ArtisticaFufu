@@ -29,11 +29,25 @@ const mainController = {
     },
 
   
-    fibrofacil: (req, res) => {
-        res.render('fibrofacil',{
-            css: './css/fibrofacil.css',
-            title: 'Fibrofacil'
-        });
+    fibrofacil:async (req, res) => {
+        
+        try {
+            const product = await db.Product.findAll({
+                include:[{association: 'colors'},
+                {association: 'ProductCategories'},
+                {association: 'ProductSubCategory'}]
+            });
+                console.log(product);
+            res.render('fibrofacil',{
+                css: './css/fibrofacil.css',
+                title: 'Fibrofacil',
+                product
+            });
+            
+        } catch (error) {
+            
+        }
+        
     },
     carritoDeCompras: (req, res) => {
         res.render('./products/carritoDeCompras',{

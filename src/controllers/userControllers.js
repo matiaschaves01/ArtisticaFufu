@@ -3,7 +3,8 @@ const path = require('path');
 const {validationResult} = require ('express-validator');
 const User = require('../services/user');
 const bcrypt = require('bcrypt')
-const db = require('../database/models')
+const db = require('../database/models');
+const { log } = require('console');
 
 const userController = { 
     login: (req, res) => {
@@ -52,14 +53,14 @@ const userController = {
             }
 
             if (userFound.user_category_id == 2) {
-                req.session.admin = userFound
+                req.session.admin = userFound.dataValues
                 console.log(req.session.admin, 'este es admin');
                 return res.redirect('/profile')
             }
             
             if (userFound && validPassword) {
                     delete userFound.password
-                    req.session.userLogged = userFound
+                    req.session.userLogged = userFound.dataValues
                     console.log(req.session.userLogged);
                     if (req.body.rememberme) {
                         res.cookie('userCookie', userFound, { maxAge: 1000*60*5})
@@ -140,10 +141,11 @@ const userController = {
         });
     },
     profile: (req, res) => {
+        console.log(req.session.userLogged,'que pasa aca????');
         res.render('user/profile', {
             title: 'Profile',
             css: '/css/profile.css',
-            user: req.session.userLogged
+            user: req.session.userLogged || req.session.admin
         });
     },
     logout : (req, res) => {

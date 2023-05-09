@@ -180,3 +180,9 @@ body{
   background: linear-gradient( to left,  #3b5998 0%, #4d86ff 100%);
   margin: 20px 0 50px 0;
 }
+ .input-error{
+  color: red;
+  font-size: 16px;
+ }
+
+ 

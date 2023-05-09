@@ -6,8 +6,20 @@
   <main>
     <section>
       <!-- <h3>Nuevos Lanzamientos</h3> -->
-      <div class="all-articles">
-
+      <% product.forEach(e => { %>
+        <div class="all-articles">
+          <a href="/products/<%= e.id %>">
+            <article>
+              <img src='/images/products/<%= e.image %>' alt=''>
+              <div class="descripciones">
+                <h4><%= e.name %></h4>
+                <p class="precio"><%= e.price %></p>
+              </div>
+            </article>
+          </a>
+        </div>
+      <% }) %>
+      <!-- <div class="all-articles">
         <a href="/detalleproducto">
           <article>
             <img src='/images/cajon-recto-chico-4.jpg' alt=''>
@@ -37,8 +49,8 @@
             </div>
           </article>
         </a>
-      </div>
-      <div class="all-articles">
+      </div> -->
+      <!-- <div class="all-articles">
 
         <a href="/detalleproducto">
           <article>
@@ -327,7 +339,7 @@
           </article>
         </a>
       </div>
-    </section>
+    </section> -->
     <%- include('./partials/footer.ejs') %> 
 </body>
 </html> 
