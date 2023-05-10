@@ -167,6 +167,30 @@ form .category label .dot{
 .input-error{
   color: red !important;
 }
+
+.cyberpunk-button {
+  background-color: #2f3640;
+  color: #fff;
+  border: 2px solid #c45fb5;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  box-shadow: 2px 2px 10px #5fc4ae;
+  transition: all 0.2s ease-in-out;
+}
+
+.cyberpunk-button:hover {
+  background-color: #5fc4ae;
+  color: #2f3640;
+  border-color: #2f3640;
+  box-shadow: 2px 2px 20px #2f3640;
+  transform: translateY(-2px);
+}
+
+
    @media(max-width: 584px){
     .container-register{
     max-width: 100%;
@@ -195,6 +219,8 @@ form .category label .dot{
     @media (min-width: 584px) {
       .yatienecuenta{
         display: flex;
+        justify-content: center;
+        align-items: center;
       }
       .yatienecuenta a{
         margin-left: 3%;

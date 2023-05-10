@@ -22,7 +22,6 @@ const mainController = {
            });
         
        } catch (error) {
-        console.log(error);
         res.json(error)
        }
        
@@ -89,7 +88,6 @@ const mainController = {
             color
         })
         } catch (error) {
-          console.log(error);
             res.json({
             error
           })  

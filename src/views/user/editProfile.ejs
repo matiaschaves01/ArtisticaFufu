@@ -9,7 +9,7 @@
                 <div class="perfil-usuario-portada">
                     <div class="perfil-usuario-avatar">
                         <img src="/images/users/<%= user.image %>" alt="img-avatar">
-                        <form action="" method="post">
+                        <form action="user/edit/<%= user.id %>/?_method=PUT" method="post" enctype="multipart/form-data">
                             <button type="button" class="boton-avatar">
                             <i class="far fa-image"><input type="file"> </i>
                         </button>
@@ -27,25 +27,26 @@
                 </div>
                 <div class="perfil-usuario-footer">
                     <ul class="lista-datos">
-                    <li>
+                        <form action="" method="post">
+                  <li>
                         <i class="icono fas fa-map-signs">
-                            </i> Direccion de usuario: 
-                            <input type="text" disabled>
+                            </i> Nombre: 
+                            <input type="text">
                     </li>
                     <li>
                          <i class="icono fas fa-phone-alt">
-                             </i> Telefono:
-                             <input type="text" disabled>
+                             </i> Apellido:
+                             <input type="text">
                     </li>
                     <li>
                          <i class="icono fas fa-briefcase">
                               </i> Trabaja en.
-                              <input type="text" disabled>
+                              <input type="text">
                     </li>
                     <li>
                         <i class="icono fas fa-building">
                             </i> Cargo
-                            <input type="text" disabled>
+                            <input type="text">
 
                         </li>
                     </ul>
@@ -53,35 +54,36 @@
                     <li>
                         <i class="icono fas fa-map-marker-alt">
                         </i> Ubicacion.
-                        <input type="text" disabled>
+                        <input type="text">
 
                     </li>
                     <li>
                         <i class="icono fas fa-calendar-alt">
                         </i> Fecha nacimiento.
-                        <input type="text" disabled>
+                        <input type="text">
 
                     </li>
                     <li>
                          <i class="icono fas fa-user-check">
                         </i> Registro.
-                        <input type="text" disabled>
+                        <input type="text">
 
                     </li>
                     <li>
                         <i class="icono fas fa-share-alt">
                         </i> Redes sociales.
-                              <input type="text" disabled>
+                              <input type="text">
 
                     </li>
                     </ul>
                     
                 </div>
             </div>
-            <form action="/logout" method="post">
-                <button class="btn-logout" type="submit">Logout</button>
+        </form>
+
+            <form action="/" method="post">
+                <button class="btn-logout" type="submit">update</button>
             </form>
-                <a href="/user/edit/<%= user.id %>"> <button class="btn-logout" type="submit">Edit</button></a>
         </section>
         
     </body>

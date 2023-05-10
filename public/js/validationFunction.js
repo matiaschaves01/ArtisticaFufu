@@ -15,7 +15,7 @@ const isEmpty = (inputArray) => {
                 errorText.remove()
             }
                 });
-                console.log(errors);
+            
                 return errors
     }
     

@@ -14,14 +14,13 @@ const userController = {
         });
     },
     loginProcess:async(req,res) =>{
-        console.log(req.body.passwordRegistro, req.body.emailRegistro);
+    
         try {
          const userFound = await db.User.findOne({
              where: {
                  email:req.body.emailRegistro
                 }
             });
-            console.log(userFound);
             if(!userFound){
                 console.log('No encontre el usuario!!!!!');
                 return res.render('user/login',{
@@ -51,17 +50,18 @@ const userController = {
                     oldBody: req.body
                 })
             }
-
-            if (userFound.user_category_id == 2) {
-                req.session.admin = userFound.dataValues
-                console.log(req.session.admin, 'este es admin');
-                return res.redirect('/profile')
-            }
             
             if (userFound && validPassword) {
                     delete userFound.password
-                    req.session.userLogged = userFound.dataValues
-                    console.log(req.session.userLogged);
+                    if (userFound.user_category_id == 2) {
+                        req.session.admin = userFound.dataValues
+                        console.log(req.session.admin, 'este es admin');
+                        // return res.redirect('/profile')
+                    }
+                    else {
+                        req.session.userLogged = userFound.dataValues
+                    }
+
                     if (req.body.rememberme) {
                         res.cookie('userCookie', userFound, { maxAge: 1000*60*5})
                     }
@@ -141,13 +141,79 @@ const userController = {
         });
     },
     profile: (req, res) => {
-        console.log(req.session.userLogged,'que pasa aca????');
+        
         res.render('user/profile', {
             title: 'Profile',
             css: '/css/profile.css',
             user: req.session.userLogged || req.session.admin
         });
     },
+    edit:  async(req, res) =>{
+        try {
+ 
+            const user = await User.findByPK(req.params.id)
+            console.log(user);
+            res.render('user/editProfile.ejs', {
+                title: 'Profile',
+                css:'css/profile.css',
+                user
+            
+            })
+
+     } catch (error) {
+        res.json(error) 
+    }
+},
+    //// GET
+   
+    //PUT
+    editUpdate: async (req, res) => {
+        try {
+
+            const user = await User.findByPK(req.params.id)
+            User.update({
+                name: req.body.name,
+                email: req.body.email,
+                image: req.file? req.file.filename : user.image
+            },{
+                where: {
+                    id: req.params.id
+                }
+            })
+            
+            res.redirect('/');
+        } catch (error) {
+            res.json(error)    
+        }
+    },
+    
+    // update: async (req, res) => {
+        
+    //     try {
+    //         const producto = await db.Product.findByPk(req.params.id) 
+            
+    //         const product = await db.Product.update(
+    //             {
+    //                 name: req.body.name,
+    //                 price: parseInt(req.body.price),
+    //                 description: req.body.description,
+    //                 image: req.file ? req.file.filename : producto.image,
+    //                 product_categories_id: req.body.product_categories_id ? req.body.product_categories_id : producto.product_categories_id
+    //             },
+    //             {
+    //                 where:{
+    //                     id: req.params.id
+    //                 }
+    //             }
+    //         )
+    //         res.redirect('/products/' + producto.id)
+    //     } catch (error) {
+    //         console.log(error);
+    //         res.json(error)
+    //     }
+    // },
+
+
     logout : (req, res) => {
         req.session.destroy()
         res.clearCookie('userCookie')

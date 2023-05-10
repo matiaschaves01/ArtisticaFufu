@@ -4,12 +4,36 @@
     <%- include('../partials/head.ejs') %> 
 <%- include('../partials/header.ejs') %> 
 
-<h1>Listado de productos</h1>
-
-<h2><a href="/products/create">Crear producto</a></h2>
+<h1 class="index-h1">Listado de productos</h1>
 
 <!-- listado de productos, se agrega todo lo que viene por JSON -->
-<ul>
+
+<% productsList.forEach(products => { %>
+<div class="container">
+    <div class="cart">
+      <div class="products">
+        <div class="product">
+          <img src="/images/products/<%= products.image %>" class="carrito-img">
+          <div class="product-info">
+            <h2 class="product-name"> <a href="/products/<%= products.id %>"><%= products.name %></a></h2>
+            <!-- <h2 class="product-price">$ 1,000</h2> -->
+            <!-- <p class="product-quantity">Cantidad: <input value="1" name=""> -->
+            <p class="product-remove">
+              <!-- <i class="fa fa-trash" aria-hidden="true"></i> -->
+                <a href="/products/edit/<%= products.id %>">Editar</a>
+                <span class="remove"></span>
+            </p>
+            <p class="product-edit">
+                <!-- <i class="fa fa-trash" aria-hidden="true"></i> -->
+                <a href="/products/delete/<%= products.id %>">Eliminar</a>
+                <span class="remove"></span>
+          </div>
+        </div>
+        <% }) %>
+<!-- <h2><a href="/products/create">Crear producto</a></h2> -->
+
+<!-- listado de productos, se agrega todo lo que viene por JSON -->
+<!-- <ul>
 
     <% productsList.forEach(products => { %>
         <li>
@@ -23,8 +47,6 @@
             
         </li>
     <% }) %>
-</ul>
-
-<%- include('../partials/footer.ejs') %> 
+</ul> -->
 </body>
 </html>

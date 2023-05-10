@@ -1,16 +1,16 @@
 
-window.addEventListener('DOMContentLoaded',()=>{
+// window.addEventListener('DOMContentLoaded',()=>{
 
-    const updateBtn = document.getElementById('update-btn')
+//     const updateBtn = document.getElementById('update-btn')
 
-    updateBtn.addEventListener('click', () =>{
-        Swal.fire({
-            // position: 'top-end',
-            icon: 'success',
-            title: 'Your work has been saved',
-            showConfirmButton: false,
-            timer: 1500
-          })
-    })
+//     updateBtn.addEventListener('click', () =>{
+//         Swal.fire({
+//             // position: 'top-end',
+//             icon: 'success',
+//             title: 'Your work has been saved',
+//             showConfirmButton: false,
+//             timer: 1500
+//           })
+//     })
 
-});
+// });
