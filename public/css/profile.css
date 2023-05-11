@@ -175,6 +175,12 @@ body {
     font-size: 1.3rem;
 }
 
+.container-profile{
+    display: flex;
+    padding: 30px;
+    margin: 12px;
+}
+
 .btn-logout {
     background: #a5a5a5;
     font-family: inherit;
@@ -197,6 +203,8 @@ body {
     transform: translate(0.05em, 0.05em);
     box-shadow: 0.05em 0.05em;
   }
+
+
 /*  */
 @media (max-width: 750px) {
     .seccion-perfil-usuario .lista-datos {
