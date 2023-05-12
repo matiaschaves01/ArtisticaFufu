@@ -14,7 +14,6 @@ const mainController = {
        try {
 
         let productsList = await db.Product.findAll()
-            console.log(productsList);
            res.render('home', {
                css: '../css/homestyles.css',
                title: 'Listado de productos',
@@ -36,7 +35,6 @@ const mainController = {
                 {association: 'ProductCategories'},
                 {association: 'ProductSubCategory'}]
             });
-                console.log(product);
             res.render('fibrofacil',{
                 css: './css/fibrofacil.css',
                 title: 'Fibrofacil',

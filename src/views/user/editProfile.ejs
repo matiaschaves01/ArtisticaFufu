@@ -4,89 +4,43 @@
     <%- include('../partials/header.ejs')%>
   
     <body>
-        <section class="seccion-perfil-usuario">
-            <div class="perfil-usuario-header">
-                <div class="perfil-usuario-portada">
-                    <div class="perfil-usuario-avatar">
-                        <img src="/images/users/<%= user.image %>" alt="img-avatar">
-                        <form action="user/edit/<%= user.id %>/?_method=PUT" method="post" enctype="multipart/form-data">
-                            <button type="button" class="boton-avatar">
-                            <i class="far fa-image"><input type="file"> </i>
-                        </button>
-                    </form>
-                    </div>
-                    <button type="button" class="boton-portada">
-                        <i class="far fa-image"><input type="file"></i> Cambiar fondo
-                    </button>
-                </div>
-            </div>
-            <div class="perfil-usuario-body">
-                <div class="perfil-usuario-bio">
-                    <h3 class="titulo"><%= user.name %> <%= user.lastname %></h3>
-                    <p class="texto"></p>
-                </div>
-                <div class="perfil-usuario-footer">
-                    <ul class="lista-datos">
-                        <form action="" method="post">
-                  <li>
-                        <i class="icono fas fa-map-signs">
-                            </i> Nombre: 
-                            <input type="text">
-                    </li>
-                    <li>
-                         <i class="icono fas fa-phone-alt">
-                             </i> Apellido:
-                             <input type="text">
-                    </li>
-                    <li>
-                         <i class="icono fas fa-briefcase">
-                              </i> Trabaja en.
-                              <input type="text">
-                    </li>
-                    <li>
-                        <i class="icono fas fa-building">
-                            </i> Cargo
-                            <input type="text">
-
-                        </li>
-                    </ul>
-                    <ul class="lista-datos">
-                    <li>
-                        <i class="icono fas fa-map-marker-alt">
-                        </i> Ubicacion.
-                        <input type="text">
-
-                    </li>
-                    <li>
-                        <i class="icono fas fa-calendar-alt">
-                        </i> Fecha nacimiento.
-                        <input type="text">
-
-                    </li>
-                    <li>
-                         <i class="icono fas fa-user-check">
-                        </i> Registro.
-                        <input type="text">
-
-                    </li>
-                    <li>
-                        <i class="icono fas fa-share-alt">
-                        </i> Redes sociales.
-                              <input type="text">
-
-                    </li>
-                    </ul>
-                    
-                </div>
-            </div>
-        </form>
-
-            <form action="/" method="post">
-                <button class="btn-logout" type="submit">update</button>
-            </form>
-        </section>
+    
         
-    </body>
-
-<!-- <a href="#" class="btn"> Click Me</a> -->
-    </html>
+<main class="create-user">  
+    <h1 class="title-user"><%= user.name %></h1>
+    
+    <div class="container-user-edit">
+            <div class="input-box-edit">  
+        <form method="POST" action="/user/edit/<%= user.id %>?_method=PUT">
+        <label for="name">Nombre:</label>
+                <input value="<%= user.name %>" type="text">
+            </div>
+            <div class="input-box-edit">
+                <label for="name">Apellido</label>
+                <input value="<%= user.lastname %>" type="text">
+            </div>
+            <div class="input-box-edit">
+                <label for="name">Nombre de usuario</label>
+                <input value="<%= user.username %>" type="text">
+            </div>
+            <div class="input-box-edit">
+                <label for="name">Telefono</label>
+                <input value="<%= user.phone %>" type="number">
+            </div>
+            <div class="input-box-edit">
+                <label for="number">Email</label>
+                <input value="<%= user.Email %>" type="text">
+            </div>
+            <div class="input-box-edit">
+                <label for="name">Seleccionar una imagen</label>
+                <input type="file" id="file" name="image" accept=".jpg">
+            </div>
+            <button id="update-btn" class="cssbuttons-io-button"> Guardar cambios
+                <div class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"></path></svg>
+                </div>
+            </button>
+            </div>
+        </main>
+</body>
+</html>

@@ -126,7 +126,6 @@ const productController = {
             )
             res.redirect('/products/' + producto.id)
         } catch (error) {
-            console.log(error);
             res.json(error)
         }
     },
@@ -154,13 +153,9 @@ const productController = {
         })
         res.redirect('/')
         } catch (error) {
-            console.log(error);
             res.json(error) 
         }
     }
 };
 
 module.exports = productController;
-
-
-// holaa

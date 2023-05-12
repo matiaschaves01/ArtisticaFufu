@@ -15,7 +15,7 @@
 //                 errorText.remove()
 //             }
 //                 });
-//                 console.log(errors);
+//               
 //                 return errors
 //             }
 window.addEventListener('DOMContentLoaded',(e) =>{

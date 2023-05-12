@@ -3,55 +3,48 @@
 <%- include('../partials/head.ejs')%>
     <%- include('../partials/header.ejs')%>
 
-        <body>
-            <section class="seccion-perfil-usuario">
-                <div class="perfil-usuario-header">
-                    <div class="perfil-usuario-portada">
-                        <div class="perfil-usuario-avatar">
-                            <img src="/images/users/<%= user.image %>" alt="img-avatar">
-                            <form action="" method="post">
-                                <button type="button" class="boton-avatar">
-                                    <i class="far fa-image"><input type="file"> </i>
-                                </button>
-                            </form>
-                        </div>
-                        <button type="button" class="boton-portada">
-                            <i class="far fa-image"><input type="file"></i> Cambiar fondo
-                        </button>
-                    </div>
-                </div>
-                <div class="perfil-usuario-body">
-                    <div class="perfil-usuario-bio">
-                        <h3 class="titulo">
-                            <%= user.name %>
-                                <%= user.lastname %>
-                        </h3>
-                        <p class="texto"></p>
-                    </div>
+<body>
+<section class="seccion-perfil-usuario">
+<div class="perfil-usuario-header">
+    <div class="perfil-usuario-portada">
+        <div class="perfil-usuario-avatar">
+            <img src="/images/users/<%= user.image %>" alt="img-avatar">
+            <form action="" method="post">
+                <!-- <button type="button" class="boton-avatar">
+                    <i class="far fa-image"><input type="file"> </i>
+                </button> -->
+            </form>
+        </div>
+        <button type="button" class="boton-portada">
+            <i class="far fa-image"><input type="file"></i> Cambiar fondo
+        </button>
+    </div>
+</div>
+<div class="perfil-usuario-body">
+    <div class="perfil-usuario-bio">
+        <h3 class="titulo">
+           Hola! <%= user.name %>
+                <%= user.lastname %>
+        </h3>
+        <p class="texto"></p>
+    </div>
     <div class="perfil-usuario-footer">
     <ul class="lista-datos">
         <li>
-            <i class="icono fas fa-map-signs">
-            </i> Nombre: 
-            <%= user.name %> <%= user.lastname %>
-            <!-- <input type="text" disabled> -->
+            <i class="icono fas fa-map-signs"></i>
+            <label for="name-lastname">Nombre: <%= user.name %> <%= user.lastname %></label> 
         </li>
         <li>
-            <i class="icono fas fa-phone-alt">
-            </i> Nombre Usuario:
-            <!-- <input type="text" disabled> -->
+            <i class="icono fas fa-phone-alt"></i>
+             <label for="">Nombre Usuario: <%= user.username %></label>
         </li>
         <li>
-            <i class="icono fas fa-briefcase">
-            </i> Trabaja en.
-            <input type="text" disabled>
+            <i class="icono fas fa-briefcase"></i> 
+            <label for="">Telefono: <%= user.phone %></label>
         </li>
         <li>
-            <i class="icono fas fa-building">
-            </i> Email: 
-            <%= user.email %>
-            <!-- <input type="text" disabled> -->
-
+            <i class="icono fas fa-building"></i> 
+            <label for="">Email: <%= user.email %></label>
             <div class="container-profile">
                 <form action="/logout" method="post">
                     <button class="btn-logout" type="submit">Logout</button>

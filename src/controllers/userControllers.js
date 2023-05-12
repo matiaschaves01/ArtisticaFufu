@@ -22,7 +22,6 @@ const userController = {
                 }
             });
             if(!userFound){
-                console.log('No encontre el usuario!!!!!');
                 return res.render('user/login',{
                     css: './css/login.css',
                     title: 'Registro',
@@ -38,7 +37,6 @@ const userController = {
             let validPassword = bcrypt.compareSync(req.body.passwordRegistro, userFound.password);  
             
             if(!validPassword){
-                console.log('No encontre el pasworddd!!!!!')
                 return res.render('user/login',{
                     css: './css/login.css',
                     title: 'Registro',
@@ -69,7 +67,6 @@ const userController = {
                    return res.redirect('/profile')
                 }
      } catch (error) {
-        console.log(error);
         res.json(error)
      }
     },
@@ -152,10 +149,9 @@ const userController = {
         try {
  
             const user = await User.findByPK(req.params.id)
-            console.log(user);
             res.render('user/editProfile.ejs', {
                 title: 'Profile',
-                css:'css/profile.css',
+                css:'/css/profile.css',
                 user
             
             })
@@ -174,12 +170,15 @@ const userController = {
             User.update({
                 name: req.body.name,
                 email: req.body.email,
+                username: req.body.username,
+                phone: req.body.phone,
                 image: req.file? req.file.filename : user.image
             },{
                 where: {
                     id: req.params.id
                 }
             })
+            
             
             res.redirect('/');
         } catch (error) {
@@ -208,7 +207,7 @@ const userController = {
     //         )
     //         res.redirect('/products/' + producto.id)
     //     } catch (error) {
-    //         console.log(error);
+    //        
     //         res.json(error)
     //     }
     // },

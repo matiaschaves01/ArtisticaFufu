@@ -67,7 +67,6 @@ formulario.addEventListener("keyup", ()=>{
     else{
         // password.style.backgroundColor="red"
     }
-    console.log(password.value == checkPassword.value, password.value, checkPassword.value);
     
 })
 
