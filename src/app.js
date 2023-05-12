@@ -12,6 +12,8 @@ const methodOverride = require('method-override');
 const mainRouters = require("./routes/mainRouters");
 const productRoutes = require('./routes/productsRoutes');
 const userRoutes = require('./routes/userRoutes');
+const productApiRoutes = require('./api/routes/productApiRoutes');
+const userApiRoutes = require('./api/routes/userApiRoutes');
 // Error 404
 // app.use((req, res, next) => {
 //     res.status(404).render('error');
@@ -47,6 +49,8 @@ app.use(userRoutes);
 
 app.use('/products', productRoutes);
 
+app.use('/api/user', userApiRoutes);
+app.use('/api/products', productApiRoutes);
 
 app.listen(PORT, function () {
     console.log(`Server running on http://localhost:${PORT}`);
