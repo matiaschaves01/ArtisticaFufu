@@ -147,8 +147,9 @@ const userController = {
     },
     edit:  async(req, res) =>{
         try {
- 
+
             const user = await User.findByPK(req.params.id)
+            console.log(user);
             res.render('user/editProfile.ejs', {
                 title: 'Profile',
                 css:'/css/profile.css',

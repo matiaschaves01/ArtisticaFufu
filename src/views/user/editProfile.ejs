@@ -13,23 +13,23 @@
             <div class="input-box-edit">  
         <form method="POST" action="/user/edit/<%= user.id %>?_method=PUT">
         <label for="name">Nombre:</label>
-                <input value="<%= user.name %>" type="text">
+                <input value="<%= user.nombre %>" type="text" name="name">
             </div>
             <div class="input-box-edit">
                 <label for="name">Apellido</label>
-                <input value="<%= user.lastname %>" type="text">
+                <input value="<%= user.apellido %>" type="text" name="lastname">
             </div>
             <div class="input-box-edit">
                 <label for="name">Nombre de usuario</label>
-                <input value="<%= user.username %>" type="text">
+                <input value="<%= user.username %>" type="text" name="username">
             </div>
             <div class="input-box-edit">
                 <label for="name">Telefono</label>
-                <input value="<%= user.phone %>" type="number">
+                <input value="<%= user.phone %>" type="number" name="phone">
             </div>
             <div class="input-box-edit">
                 <label for="number">Email</label>
-                <input value="<%= user.Email %>" type="text">
+                <input value="<%= user.email %>" type="text" name="email">
             </div>
             <div class="input-box-edit">
                 <label for="name">Seleccionar una imagen</label>
