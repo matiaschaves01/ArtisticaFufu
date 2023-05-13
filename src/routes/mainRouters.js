@@ -12,9 +12,9 @@ router.get("/", mainController.home);
 // router.get("/register", mainController.register);
 // router.post("/register",userValidator, mainController.registerProcess)
 
-// producto
+
 router.get("/carritoDeCompras", mainController.carritoDeCompras);
 router.get("/fibrofacil", mainController.fibrofacil);
-router.get("/prueba", mainController.prueba);
+router.get("/userList", mainController.userList);
 
 module.exports = router

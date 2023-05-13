@@ -99,7 +99,7 @@ const userController = {
                 email: req.body.emailRegistro,
                 user_category_id: req.body.user_category_id ? user_category_id: 1,
                password: bcrypt.hashSync(req.body.passwordRegistro, 10),
-               image: req.file? req.file.filename:'usuarioDefault.png'
+               image: req.file? req.file.filename:'/images/usuarioDefault.png'
            }
            delete body.checkPassword
 
@@ -148,16 +148,17 @@ const userController = {
     edit:  async(req, res) =>{
         try {
 
-            const user = await User.findByPK(req.params.id)
-            console.log(user);
+            // console.log(res.session.userLogged);
+            // const user = await db.User.findByPK(req.params.id)
             res.render('user/editProfile.ejs', {
                 title: 'Profile',
                 css:'/css/profile.css',
-                user
-            
+                user: req.session.userLogged || req.session.admin
+                
             })
 
      } catch (error) {
+        console.log(error);
         res.json(error) 
     }
 },
@@ -166,23 +167,32 @@ const userController = {
     //PUT
     editUpdate: async (req, res) => {
         try {
-
-            const user = await User.findByPK(req.params.id)
-            User.update({
+            let image = req.session.userLogged || req.session.admin
+        
+            //  let id = req.session.userLogged.id || req.session.admin.id
+            await db.User.update({
                 name: req.body.name,
                 email: req.body.email,
                 username: req.body.username,
                 phone: req.body.phone,
-                image: req.file? req.file.filename : user.image
+                image: req.file? req.file.filename : image.image
             },{
                 where: {
                     id: req.params.id
                 }
             })
-            
-            
+            const user = await db.User.findByPk(req.params.id)
+
+            if (req.session.userLogged) {
+                req.session.userLogged = user
+            }
+            if (req.session.admin) {
+                req.session.admin = user
+            }
+            // console.log(userUpdate);
             res.redirect('/');
         } catch (error) {
+            console.log(error);
             res.json(error)    
         }
     },

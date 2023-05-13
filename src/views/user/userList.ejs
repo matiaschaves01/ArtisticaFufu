@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../partials/head.ejs')%>
+    <%- include('../partials/header.ejs')%>
+
+<h1 class="index-h1">Listado de Usuarios</h1>
+
+<!-- listado de Usuarios, se agrega todo lo que viene por JSON -->
+
+<% usersList.forEach(user => { %>
+<div class="container">
+    <div class="cart">
+      <div class="products">
+        <div class="product">
+          <img src="/images/users/<%= user.image %>" class="carrito-img">
+          <div class="product-info">
+            <h2 class="product-name"> <a href="/user/<%= user.id %>"><%= user.name %> </a> <%= user.lastname %></h2>
+            <h2 class="product-name"> <a href="/user/<%= user.id %>"><%= user.email %></a></h2>
+            <p class="product-remove">
+                <a href="/user/edit/<%= user.id %>">Editar</a>
+                <span class="remove"></span>
+            </p>
+            <p class="product-edit">
+                <a href="/user/delete/<%= user.id %>">Eliminar</a>
+                <span class="remove"></span>
+          </div>
+        </div>
+        <% }) %>
+    </body>
+    </html>

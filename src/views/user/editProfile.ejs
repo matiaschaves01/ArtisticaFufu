@@ -3,9 +3,7 @@
     <%- include('../partials/head.ejs')%>
     <%- include('../partials/header.ejs')%>
   
-    <body>
-    
-        
+<body>       
 <main class="create-user">  
     <h1 class="title-user"><%= user.name %></h1>
     
@@ -13,11 +11,11 @@
             <div class="input-box-edit">  
         <form method="POST" action="/user/edit/<%= user.id %>?_method=PUT">
         <label for="name">Nombre:</label>
-                <input value="<%= user.nombre %>" type="text" name="name">
+                <input value="<%= user.name %>" type="text" name="name">
             </div>
             <div class="input-box-edit">
                 <label for="name">Apellido</label>
-                <input value="<%= user.apellido %>" type="text" name="lastname">
+                <input value="<%= user.lastname %>" type="text" name="lastname">
             </div>
             <div class="input-box-edit">
                 <label for="name">Nombre de usuario</label>

@@ -25,8 +25,6 @@ const mainController = {
        }
        
     },
-
-  
     fibrofacil:async (req, res) => {
         
         try {
@@ -45,7 +43,22 @@ const mainController = {
             
         }
         
-    },
+    }, userList: async(req, res) => {
+       
+        try {
+ 
+         let usersList = await db.User.findAll()
+            res.render('user/userList.ejs', {
+                css: '../css/homestyles.css',
+                title: 'Listado de Usuarios',
+                usersList
+            });
+         
+        } catch (error) {
+         res.json(error)
+        }
+        
+     },
     carritoDeCompras: (req, res) => {
         res.render('./products/carritoDeCompras',{
             css: './css/carrito-styles.css',
