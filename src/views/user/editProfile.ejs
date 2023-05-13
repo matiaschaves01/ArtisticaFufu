@@ -9,7 +9,7 @@
     
     <div class="container-user-edit">
             <div class="input-box-edit">  
-        <form method="POST" action="/user/edit/<%= user.id %>?_method=PUT">
+        <form method="POST" action="/user/edit/<%= user.id %>?_method=PUT" enctype="multipart/form-data">
         <label for="name">Nombre:</label>
                 <input value="<%= user.name %>" type="text" name="name">
             </div>
@@ -31,7 +31,7 @@
             </div>
             <div class="input-box-edit">
                 <label for="name">Seleccionar una imagen</label>
-                <input type="file" id="file" name="image" accept=".jpg">
+                <input type="file" id="file" name="image">
             </div>
             <button id="update-btn" class="cssbuttons-io-button"> Guardar cambios
                 <div class="icon">

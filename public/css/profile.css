@@ -99,9 +99,9 @@ body {
     border-radius: 50%;
     cursor: pointer;
 } */
-input[type="file"] {
+/* input[type="file"] {
     display: none;
-  }
+  } */
 
 .seccion-perfil-usuario .perfil-usuario-body {
     width: 70%;
