@@ -36,5 +36,26 @@ module.exports = {
         res.status(400).json({error})
     }
 
-   }
+   },
+   delete: async (req , res) =>{
+
+    try {
+        
+        await Product.destroy({
+            where:{
+                id:req.params.id
+            }
+        })
+
+        res.status(200).json({
+            
+            status:200,
+            data: 'Producto Eliminado'
+        })
+
+    } catch (error) {
+        console.log(error);
+        res.status(400).json(error)
+    }
+}
 }

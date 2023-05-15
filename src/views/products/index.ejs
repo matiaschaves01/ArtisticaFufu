@@ -16,8 +16,6 @@
           <img src="/images/products/<%= products.image %>" class="carrito-img">
           <div class="product-info">
             <h2 class="product-name"> <a href="/products/<%= products.id %>"><%= products.name %></a></h2>
-            <!-- <h2 class="product-price">$ 1,000</h2> -->
-            <!-- <p class="product-quantity">Cantidad: <input value="1" name=""> -->
             <p class="product-remove">
               <!-- <i class="fa fa-trash" aria-hidden="true"></i> -->
                 <a href="/products/edit/<%= products.id %>">Editar</a>
@@ -25,28 +23,15 @@
             </p>
             <p class="product-edit">
                 <!-- <i class="fa fa-trash" aria-hidden="true"></i> -->
-                <a href="/products/delete/<%= products.id %>">Eliminar</a>
+                <a id="delete-product" data-id="<%= products.id %>">Eliminar</a>
                 <span class="remove"></span>
+            </p>
           </div>
         </div>
         <% }) %>
-<!-- <h2><a href="/products/create">Crear producto</a></h2> -->
 
-<!-- listado de productos, se agrega todo lo que viene por JSON -->
-<!-- <ul>
 
-    <% productsList.forEach(products => { %>
-        <li>
-            <h3>
-                <a href="/products/<%= products.id %>"><%= products.name %></a>
-                -
-                <a href="/products/edit/<%= products.id %>">Editar</a>
-                -
-                <a href="/products/delete/<%= products.id %>">Eliminar</a>
-            </h3>
-            
-        </li>
-    <% }) %>
-</ul> -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="/js/swissAlert.js"></script>
 </body>
 </html>

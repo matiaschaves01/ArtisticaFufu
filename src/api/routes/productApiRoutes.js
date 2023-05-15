@@ -7,6 +7,7 @@ router.get('/', productApiController.getAll);
 
 router.get('/detail/:id', productApiController.detail);
 
+router.delete('/delete/:id', productApiController.delete);
 
 
 module.exports = router

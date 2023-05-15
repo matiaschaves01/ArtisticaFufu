@@ -5,5 +5,6 @@ const userApiController = require('../controllers/userControllerApi')
 
 router.get('/', userApiController.getAll)
 router.get('/:id', userApiController.getByPk)
+router.delete('/delete/:id', userApiController.delete)
 
 module.exports = router

@@ -36,7 +36,6 @@ const productController = {
                 {association: 'ProductSubCategory'}]
         } )
            
-
             res.render('products/show', {
                 css: '/css/detalleproducto.css',
                 title: 'Detalle Producto',

@@ -39,7 +39,8 @@ module.exports = (sequelize, DataType) => {
         {
             tableName:'user',
             timestamp: true,
-            underscored: true
+            underscored: true,
+            paranoid: true
         }
     )
 

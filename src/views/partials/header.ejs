@@ -19,13 +19,16 @@
                 <a href="/login"> <i class="fa-solid fa-user"></i></a> 
               <% } %>
 
-              <% if (locals.userIsLogged || locals.userIsAdmin) { %>
-                <a href="/profile"> <i class="fa-solid fa-user"></i></a> 
+              <% if (locals.userIsAdmin) { %>
+                <a href="/profile"><img class="user-icon" src="/images/users/<%= locals.admin.image %>" alt=""> </a> 
+              <% } %>
+              <% if (locals.userIsLogged) { %>
+                <a href="/profile"><img class="user-icon" src="/images/users/<%= locals.userLogged?.image %>" alt=""> </a> 
               <% } %>
               <a href="/carritoDeCompras"><i class="fa-solid fa-basket-shopping"></i></a>
                 <div class="content-shopping-cart">
-                    <span class="text">Carrito</span>
-                    <span class="number">(0)</span>
+                    <!-- <span class="text">Carrito</span>
+                    <span class="number">(0)</span> -->
                 </div>
             </div>
         </div>

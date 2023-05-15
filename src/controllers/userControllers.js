@@ -97,9 +97,11 @@ const userController = {
                 name: req.body.nombre,
                 lastname: req.body.apellido,
                 email: req.body.emailRegistro,
+                username:req.body.nombreUsuario,
+                phone: req.body.numeroTelefono,
                 user_category_id: req.body.user_category_id ? user_category_id: 1,
-               password: bcrypt.hashSync(req.body.passwordRegistro, 10),
-               image: req.file? req.file.filename:'/images/usuarioDefault.png'
+                password: bcrypt.hashSync(req.body.passwordRegistro, 10),
+                image: req.file? req.file.filename:'/images/usuarioDefault.png'
            }
            delete body.checkPassword
 
@@ -138,7 +140,7 @@ const userController = {
         });
     },
     profile: (req, res) => {
-        
+        console.log(req.session.userLogged || req.session.admin);
         res.render('user/profile', {
             title: 'Profile',
             css: '/css/profile.css',
@@ -197,33 +199,7 @@ const userController = {
         }
     },
     
-    // update: async (req, res) => {
-        
-    //     try {
-    //         const producto = await db.Product.findByPk(req.params.id) 
-            
-    //         const product = await db.Product.update(
-    //             {
-    //                 name: req.body.name,
-    //                 price: parseInt(req.body.price),
-    //                 description: req.body.description,
-    //                 image: req.file ? req.file.filename : producto.image,
-    //                 product_categories_id: req.body.product_categories_id ? req.body.product_categories_id : producto.product_categories_id
-    //             },
-    //             {
-    //                 where:{
-    //                     id: req.params.id
-    //                 }
-    //             }
-    //         )
-    //         res.redirect('/products/' + producto.id)
-    //     } catch (error) {
-    //        
-    //         res.json(error)
-    //     }
-    // },
-
-
+    
     logout : (req, res) => {
         req.session.destroy()
         res.clearCookie('userCookie')
@@ -232,4 +208,30 @@ const userController = {
     },
 }
 
+
 module.exports = userController
+// update: async (req, res) => {
+    
+//     try {
+//         const producto = await db.Product.findByPk(req.params.id) 
+        
+//         const product = await db.Product.update(
+//             {
+//                 name: req.body.name,
+//                 price: parseInt(req.body.price),
+//                 description: req.body.description,
+//                 image: req.file ? req.file.filename : producto.image,
+//                 product_categories_id: req.body.product_categories_id ? req.body.product_categories_id : producto.product_categories_id
+//             },
+//             {
+//                 where:{
+//                     id: req.params.id
+//                 }
+//             }
+//         )
+//         res.redirect('/products/' + producto.id)
+//     } catch (error) {
+//        
+//         res.json(error)
+//     }
+// },

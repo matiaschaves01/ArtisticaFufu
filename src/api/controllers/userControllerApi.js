@@ -40,6 +40,28 @@ module.exports = {
             res.status(400).json({error})
         }
 
+    },
+
+    delete: async (req , res) =>{
+
+        try {
+            
+            await User.destroy({
+                where:{
+                    id:req.params.id
+                }
+            })
+
+            res.status(200).json({
+                
+                status:200,
+                data: 'Usuario Eliminado'
+            })
+
+        } catch (error) {
+            console.log(error);
+            res.status(400).json(error)
+        }
     }
 
 }
