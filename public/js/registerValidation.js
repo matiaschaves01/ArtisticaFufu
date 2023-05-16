@@ -56,6 +56,43 @@ function validarFormulario(evt) {
     }
 }
 
+
+// function validarFormulario(evt) {
+//     const input = evt.target;
+
+//     if (input.tagName === 'INPUT') {
+//         const atributte = input.id;
+//         const campo = obtenerCampo(atributte);
+
+//         if (!input.value.length) {
+//             aplicarEstilos(input, 'red');
+//             mostrarError(`Debe ingresar un valor en el campo ${campo}!`);
+//         } else {
+//             aplicarEstilos(input, 'green');
+//         }
+//     }
+// }
+
+// function obtenerCampo(atributte) {
+//     const campos = {
+//         nombre: 'nombre',
+//         apellido: 'apellido',
+//         emailRegistro: 'email',
+//         numeroTelefono: 'numero de telefono',
+//         nombreUsuario: 'nombre usuario',
+//         checkPassword: 'confirme contraseña',
+//         passwordRegistro: 'contraseña'
+//     };
+
+//     return campos[atributte] || 'campo';
+// }
+
+// function aplicarEstilos(input, color) {
+//     input.style.borderBottomColor = color;
+//     input.style.color = color;
+// }
+
+
 //validacion de password
 
 formulario.addEventListener("keyup", ()=>{
