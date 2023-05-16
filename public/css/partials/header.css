@@ -111,16 +111,21 @@ html {
 
 .container-user .fa-user {
 	font-size: 3rem;
+	margin: 8px;
 	color:#5fc4ae;
-	padding-right: 2.5rem;
+	padding-right: 2rem;
 	border-right: 1px solid #e2e2e2;
 }
 
 .container-user .fa-basket-shopping {
+	font-size: 3rem;
 	margin: 8px;
-	font-size: 3.3rem;
 	color:#5fc4ae;
-	padding-left: 1rem;
+	padding-right: 2rem;
+	/* margin: 8px;
+	font-size: 3rem;
+	color:#5fc4ae;
+	padding-left: 0.5rem; */
 }
 
 .content-shopping-cart {

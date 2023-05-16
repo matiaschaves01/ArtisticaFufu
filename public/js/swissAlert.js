@@ -3,10 +3,11 @@ window.addEventListener("DOMContentLoaded", () => {
     if (e.target.id == "delete-user") {
       await Swal.fire({
         // position: 'top-end',
+        title: 'Estas seguro que quieres eliminar el usuario?',
         icon: "success",
-        title: "Your work has been saved",
-        showConfirmButton: false,
-        timer: 1500,
+        padding: '1rem',
+        allowEscapeKey: false
+        // showConfirmButton: 'Eliminar'
       });
       await fetch(
         `http://localhost:3007/api/user/delete/${e.target.dataset.id}`,
@@ -19,10 +20,11 @@ window.addEventListener("DOMContentLoaded", () => {
     if (e.target.id == "delete-product") {
         await Swal.fire({
           // position: 'top-end',
+          title: 'Estas seguro que quieres eliminar el producto?',
           icon: "success",
-          title: "Your work has been saved",
-          showConfirmButton: false,
-          timer: 1500,
+          padding: '1rem',
+          allowEscapeKey: false,
+          // showConfirmButton: 'Eliminar'
         });
         await fetch(
           `http://localhost:3007/api/products/delete/${e.target.dataset.id}`,
