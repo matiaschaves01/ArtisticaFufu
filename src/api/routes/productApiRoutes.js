@@ -5,6 +5,8 @@ const productApiController = require('../controllers/productControllerApi')
 
 router.get('/', productApiController.getAll);
 
+router.get('/last', productApiController.getLast);
+
 router.get('/detail/:id', productApiController.detail);
 
 router.delete('/delete/:id', productApiController.delete);
