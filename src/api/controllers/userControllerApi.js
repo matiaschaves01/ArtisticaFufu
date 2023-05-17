@@ -14,7 +14,7 @@ module.exports = {
     
             res.status(200).json({
                 status:200,
-                length: User.length,
+                length: user.length,
                 user
             })
     
@@ -22,8 +22,23 @@ module.exports = {
             console.log(error);
             res.status(400).json({error})
         }
-    },
-
+    },getLast: async (req, res) => {
+        try {
+          const user = await User.findOne({
+            order: [["created_at", "DESC"]],
+          });
+    
+          res.status(200).json({
+            status: 200,
+            length: user.length,
+            user,
+          });
+        } catch (error) {
+          console.log(error);
+          res.status(400).json({ error });
+        }
+      },
+    
     getByPk: async (req, res) => {
 
         try {
