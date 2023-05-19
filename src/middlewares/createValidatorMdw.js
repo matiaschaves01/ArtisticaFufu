@@ -6,7 +6,7 @@ const createMiddleware = [
         .notEmpty().withMessage('Por favor ingrese su nombre').bail()
         .isLength({min: 2}).withMessage('Minimo 2 caracteres')
         .isLength({max: 60}).withMessage('Maximo 20 caracteres'),
-        body('description')
+    body('description')
         .notEmpty().withMessage('Por favor ingrese una descripcion').bail()
         .isLength({min: 60}).withMessage('Minimo 60 caracteres')
         .isLength({max: 3500}).withMessage('Maximo 500 caracteres'),
@@ -33,3 +33,4 @@ const createMiddleware = [
 ];
 
 module.exports = createMiddleware
+
