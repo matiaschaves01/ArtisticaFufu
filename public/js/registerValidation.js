@@ -7,7 +7,7 @@ inputs.forEach((input) => {
     input.addEventListener('blur', validarFormulario);
 })
 
-// ejecuta el evento BLUR x el que se muestran los errores
+// Ejecuta el evento BLUR x el que se muestran los errores
 
 let contentError = document.getElementById('error');
 
@@ -15,7 +15,7 @@ function mostrarError(error) {
     contentError.innerHTML = `<p class='error'>${error}</p>`
 }
 
-// validar el CADA ERROR EN EL EVENTO BLUR
+// Validar el CADA ERROR EN EL EVENTO BLUR
 function validarFormulario(evt) {
     let input = evt.target    
     let atributte =  input.id   
@@ -25,7 +25,6 @@ function validarFormulario(evt) {
         if (!input.value.length) {
             input.style.borderBottomColor = 'red';
             input.style.color = 'red'; 
-            // input.style.backgroundColor = "rgb(168, 110, 110)"; 
             if (atributte == "nombre") {
                 campo = "nombre"             
             }
@@ -88,8 +87,8 @@ function validarFormulario(evt) {
 // }
 
 // function aplicarEstilos(input, color) {
-//     input.style.borderBottomColor = color;
-//     input.style.color = color;
+//     input.style.borderBottomColor = 'green';
+//     input.style.color = 'green';
 // }
 
 
@@ -102,7 +101,7 @@ formulario.addEventListener("keyup", ()=>{
     
     }
     else{
-        // password.style.backgroundColor="red"
+      
     }
     
 })
@@ -116,3 +115,5 @@ formulario.addEventListener("submit", (e)=>{
         e.preventDefault()
     }
 })
+
+
