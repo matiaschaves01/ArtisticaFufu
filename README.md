@@ -1,5 +1,10 @@
 S P R I N T #
 -------------
+COLABORADORES 
+Matias Chaves:
+Agustín Darboure:
+Nacho Lanusse:
+Oliver Steward:
 
 WIREFRAMES
 - Home: https://wireframe.cc/Ti9kMC
