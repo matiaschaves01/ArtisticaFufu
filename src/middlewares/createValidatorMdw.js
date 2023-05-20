@@ -8,7 +8,7 @@ const createMiddleware = [
         .isLength({max: 60}).withMessage('Maximo 20 caracteres'),
     body('description')
         .notEmpty().withMessage('Por favor ingrese una descripcion').bail()
-        .isLength({min: 60}).withMessage('Minimo 60 caracteres')
+        .isLength({min: 15}).withMessage('Minimo 15 caracteres')
         .isLength({max: 3500}).withMessage('Maximo 500 caracteres'),
     body('price')
         .notEmpty().withMessage('Por favor ingrese un precio').bail()

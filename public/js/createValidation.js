@@ -1,96 +1,131 @@
-const formulario = document.getElementById("formulario");
+const formulario = document.getElementById('form-create');
+
 const inputs = document.querySelectorAll('#formulario input');
 
 inputs.forEach((input) => {
-    input.addEventListener('keyup', validarFormulario);
-    input.addEventListener('blur', validarFormulario);
+  input.addEventListener('keyup', validarFormulario);
+  input.addEventListener('blur', validarFormulario);
 });
 
 let contentErrorName = document.getElementById('errorNombre');
+let contentErrorDescription = document.getElementById('errorDescription');
 let contentErrorCantidad = document.getElementById('errorCantidad');
 let contentErrorPrice = document.getElementById('errorPrice');
-let contentErrorUsuario = document.getElementById('errorUsuario');
-let contentErrorDescription = document.getElementById('errorDescription');
 let contentErrorImage = document.getElementById('errorImage');
 let contentErrorCategory = document.getElementById('errorCategory');
-let contentError = document.getElementById('error');
 
-function mostrarError(error, contentElement) {
-    contentElement.innerHTML = `<p class='error'>${error}</p>`;
+function mostrarErrorNombre(error) {
+  if (contentErrorName !== null) {
+    contentErrorName.innerHTML = `<p class='errorNombre'>${error}</p>`;
+  }
 }
 
+function mostrarErrorDescription(error) {
+  if (contentErrorDescription !== null) {
+    contentErrorDescription.innerHTML = `<p class='errorDescription'>${error}</p>`;
+  }
+}
+
+function mostrarErrorCantidad(error) {
+  if (contentErrorCantidad !== null) {
+    contentErrorCantidad.innerHTML = `<p class='errorCantidad'>${error}</p>`;
+  }
+}
+
+function mostrarErrorPrice(error) {
+  if (contentErrorPrice !== null) {
+    contentErrorPrice.innerHTML = `<p class='errorPrice'>${error}</p>`;
+  }
+}
+
+function mostrarErrorImage(error) {
+  if (contentErrorImage !== null) {
+    contentErrorImage.innerHTML = `<p class='errorImage'>${error}</p>`;
+  }
+}
+
+function mostrarErrorCategory(error) {
+  if (contentErrorCategory !== null) {
+    contentErrorCategory.innerHTML = `<p class='errorCategory'>${error}</p>`;
+  }
+}
 
 function validarFormulario(evt) {
-    let input = evt.target;
-    let atributte = input.id;
-    let campo;
+  let input = evt.target;
+  let attribute = input.id;
+  let campo;
 
-    if (input.tagName == 'INPUT') {
-        if (!input.value.length) {
-            input.style.borderBottomColor = 'red';
-            input.style.color = 'red';
-
-            if (atributte == "name") {
-                campo = "nombre";
-                mostrarError("Debe ingresar un valor en el campo " + campo + "!", contentErrorName);
-            }
-            if (atributte == "description") {
-                campo = "description";
-                mostrarError("Debe ingresar un valor en el campo " + campo + "!", contentErrorDescription);
-            }
-            if (atributte == "cantidad") {
-                campo = "cantidad";
-                mostrarError("Debe ingresar un valor en el campo " + campo + "!", contentErrorCantidad);
-            }
-            if (atributte == "price") {
-                campo = "precio";
-                mostrarError("Debe ingresar un valor en el campo " + campo + "!", contentErrorPrice);
-            }
-            if (atributte == "image") {
-                campo = "imagen";
-                mostrarError("Debe ingresar un valor en el campo " + campo + "!", contentErrorImage);
-            }
-            if (atributte == "product_categories_id") {
-                campo = "categoria";
-                mostrarError("Debe ingresar un valor en el campo " + campo + "!", contentErrorCategory);
-            }
-            mostrarError("Debe ingresar un valor en el campo " + campo + "!", contentError);
-        } else {
-            input.style.borderBottomColor = 'green';
-            input.style.color = 'green';
-        }
+  if (input.tagName === 'INPUT') {
+    if (!input.value.length) {
+      input.classList.add('error-input');
+      if (attribute === "name") {
+        campo = "nombre";
+        mostrarErrorNombre("Debe ingresar un valor en el campo " + campo + "!");
+      }
+      if (attribute === "description") {
+        campo = "description";
+        mostrarErrorDescription("Debe ingresar un valor en el campo " + campo + "!");
+      }
+      // Add conditions for other attributes if needed
+    } else {
+      input.classList.remove('error-input');
     }
+  }
 }
 
 formulario.addEventListener("submit", (e) => {
-    if (formulario.name.value.length < 3) {
-        e.preventDefault();
-        mostrarError("Debes ingresar un nombre de más de 3 caracteres", contentErrorName);
+  if (formulario.name && formulario.name.value && formulario.name.value.length < 3) {
+    e.preventDefault();
+    if (formulario.name.classList) {
+      formulario.name.classList.add('error-input');
     }
-    if (formulario.description.value.length < 15) {
-        e.preventDefault();
-        mostrarError("Debes ingresar una descripción de más de 15 caracteres", contentErrorDescription);
+    mostrarErrorNombre("Debes ingresar un nombre de más de 3 caracteres");
+  } else if (formulario.name && formulario.name.classList) {
+    formulario.name.classList.remove('error-input');
+  }
+  if (formulario.description && formulario.description.value && formulario.description.value.length < 15) {
+    e.preventDefault();
+    if (formulario.description.classList) {
+      formulario.description.classList.add('error-input');
     }
-    if (formulario.cantidad.value.length == "") {
-        e.preventDefault();
-        mostrarError("Debes ingresar una cantidad", contentErrorCantidad);
+    mostrarErrorDescription("Debes ingresar una descripción de más de 15 caracteres");
+  } else if (formulario.description && formulario.description.classList) {
+    formulario.description.classList.remove('error-input');
+  }
+  if (formulario.cantidad && formulario.cantidad.value === "") {
+    e.preventDefault();
+    if (formulario.cantidad.classList) {
+      formulario.cantidad.classList.add('error-input');
     }
-    if (formulario.price.value < 1) {
-        e.preventDefault();
-        mostrarError("Debes ingresar un precio mayor a 1", contentErrorPrice);
+    mostrarErrorCantidad("Debes ingresar una cantidad");
+  } else if (formulario.cantidad && formulario.cantidad.classList) {
+    formulario.cantidad.classList.remove('error-input');
+  }
+  if (formulario.price && formulario.price.value && formulario.price.value < 1) {
+    e.preventDefault();
+    if (formulario.price.classList) {
+      formulario.price.classList.add('error-input');
     }
-    if (formulario.image.value.length == "") {
-        e.preventDefault();
-        mostrarError("Debes ingresar una imagen", contentErrorImage);
+    mostrarErrorPrice("Debes ingresar un precio mayor a 1");
+  } else if (formulario.price && formulario.price.classList) {
+    formulario.price.classList.remove('error-input');
+  }
+  if (formulario.image && formulario.image.value === "") {
+    e.preventDefault();
+    if (formulario.image.classList) {
+      formulario.image.classList.add('error-input');
     }
-    if (formulario.product_categories_id.value.length == "") {
-        e.preventDefault();
-        mostrarError("Debes ingresar una categoría del producto", contentErrorCategory);
+    mostrarErrorImage("Debes ingresar una imagen");
+  } else if (formulario.image && formulario.image.classList) {
+    formulario.image.classList.remove('error-input');
+  }
+  if (formulario.product_categories_id && formulario.product_categories_id.value === "") {
+    e.preventDefault();
+    if (formulario.product_categories_id.classList) {
+      formulario.product_categories_id.classList.add('error-input');
     }
+    mostrarErrorCategory("Debes ingresar una categoría del producto");
+  } else if (formulario.product_categories_id && formulario.product_categories_id.classList) {
+    formulario.product_categories_id.classList.remove('error-input');
+  }
 });
-
-window.addEventListener('DOMContentLoaded', (e) => {
-    const formulario = document.getElementById('form-create');
-    const nameId = document.getElementById('name');
-
-    
