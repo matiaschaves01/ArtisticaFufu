@@ -1,50 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <%- include('../partials/head.ejs') %> 
-<body>
-    <%- include('../partials/header.ejs') %> 
+<%- include('../partials/head.ejs') %>
 
-<main class="create-edit">            
-    <!-- metodo aplicado para editar ID -->
-    <div class="container-create-edit">
-            <h1><%= product.name %></h1>
-            <div class="input-box-edit">  
-        <form method="post" action="/products/edit/<%= product.id %>?_method=PUT">
-        <label for="name">Nombre del producto:</label>
-                <input value="<%= product.name %>" type="text" id="name" name="name" <%= product.name %>>
-            </div>
-            <div class="input-box-edit">
-                <label for="name">Descripción:</label>
-                <input value="<%= product.description %>" type="text" id="name2" name="description">
-            </div>
-            <div class="input-box-edit">
-                <label for="number">Precio</label>
-                <input value="<%= product.price %>" type="number" id="price" name="price">
-            </div>
-            <div class="input-box-edit">
-                <label for="name">Seleccionar una imagen para el producto</label>
-                <input type="file" id="file" name="image" accept=".jpg">
-            </div>
-                <div class="input-box-edit">
-                    <label  class="form-label" for="year">Categoría</label>
-                    <select name="product_categories_id" id="">
-                        <option value="" disabled selected >Selecionar:</option>
-                        <% categorie.forEach(categorie => { %>
-                         <option value="<%= categorie.id %>"><%= categorie.category %></option>
-                        <% }) %>
-                    </select>
-                    </div>
-                    <!-- <a href="/"><input class="boton-register" type="submit" value="Guardar cambios"></a> -->
-                    <button id="update-btn" class="cssbuttons-io-button"> Guardar cambios
-                        <div class="icon">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"></path></svg>
-                        </div>
-                      </button>
-                    <form>
-                        </div>
+    <body>
+        <%- include('../partials/header.ejs') %>
+
+            <main class="create-edit">
+                <!-- metodo aplicado para editar ID -->
+                <div class="container-create-edit">
+
+                    <form id="formulario" method="post" action="/products/edit/<%= product.id %>?_method=PUT">
+
+                            <div class="input-box-edit">
+                                <label for="name">Nombre</label>
+                                <br>
+                                <input type="text" id="name" name="name" value="<%= product.name %>">
+                                <div id="errorNombre"></div>
+                                <% if (locals.error && error.nombre) { %>
+                                    <p>
+                                        <%= error.nombre.msg %>
+                                    </p>
+                                    <% } %>
+                            </div>
+
+                            <div class="input-box-edit">
+                                <label for="name">Descripción</label> <br>
+                                <input type="text" id="description" name="description"
+                                value="<%= product.description %>">
+                                <div id="errorDescription"></div>
+                            </div>
+
+                            <div class="input-box-edit">
+                                <label for="name">Cantidad</label> <br>
+                                <input type="text" id="cantidad" name="cantidad"
+                                value="<%= product.description %>">
+                                <div id="errorCantidad"></div>
+                            </div>
+
+                            <div class="input-box-edit">
+                                <label for="number">Precio</label> <br>
+                                <input type="number" id="price" name="price"
+                                value="<%= product.price %>">
+                                <div id="errorPrice"></div>
+                            </div>
+
+                            <div class="input-box-edit">
+                                <label for="name">Seleccioná una imagen</label>
+                                <input type="file" id="image" name="image" accept=".jpg">
+                                <div id="errorImage"></div>
+
+                            </div>
+
+                            <div class="input-box-edit">
+                                <label class="form-label" for="year">Categoría</label>
+                                <select name="product_categories_id" id="product_categories_id">
+                                    <option value="" disabled selected>Selecionar:</option>
+                                    <% categorie.forEach(categorie=> { %>
+                                        <option value="<%= categorie.id %>">
+                                            <%= categorie.category %>
+                                        </option>
+                                        <% }) %>
+                                </select>
+                                <div id="errorCategory"></div>
+                            </div>
+
+                            <!-- <a href="/"><input class="boton-register" type="submit" value="Guardar cambios"></a> -->
+                            <button class="cssbuttons-io-button"> Guardar cambios
+                                <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                                        <path fill="none" d="M0 0h24v24H0z"></path>
+                                        <path fill="currentColor"
+                                            d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z">
+                                        </path>
+                                    </svg>
+                                </div>
+                            </button>
+
+                        <div id="error"></div>
+
+                    </form>
+                </div>   
         </main>
 
-</body>
+    </body>
+
+    <script src="/js/editProducto.js"></script>
+
+    <%- include('../partials/footer.ejs') %>
 
 </html>
