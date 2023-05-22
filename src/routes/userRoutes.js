@@ -5,9 +5,9 @@ const userValidator = require('../middlewares/userValidator');
 const upload = require('../middlewares/multer');
 const authMiddleware = require('../middlewares/authMiddleware')
 const guestMiddleware = require('../middlewares/guestMiddleware');
+const adminMiddleware = require('../middlewares/adminMiddleware');
 
-
-router.get("/admin", userController.admin);
+router.get("/admin", adminMiddleware,userController.admin);
 
 router.get("/login",authMiddleware,userController.login);
 router.post("/login", userController.loginProcess);
@@ -15,7 +15,7 @@ router.post('/logout', userController.logout);
 
 router.get('/profile',guestMiddleware,userController.profile);
 // router.put('/profile/edit',userController.editUpdate);
-router.get('/user/edit/:id',userController.edit);
+router.get('/user/edit/:id',guestMiddleware,userController.edit);
 router.put('/user/edit/:id',upload.single('image'),userController.editUpdate);
 
 router.get("/register",authMiddleware, userController.register);

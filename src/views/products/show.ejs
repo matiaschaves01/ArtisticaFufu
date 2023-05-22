@@ -43,12 +43,15 @@
 						<div class="btn__group addcart">
 							<a>Añadir al carrito</a>
 						</div>
-						<div class="btn__group">
-							<a href="/products/edit/<%= producto.id %>">Editar</a>
-						</div>
-						<div class="btn__group">
-							<a href="/products/delete/<%= producto.id %>">Eliminar</a>
-						</div>
+						<% if (locals.userIsAdmin) { %>
+						 
+							<div class="btn__group">
+								<a href="/products/edit/<%= producto.id %>">Editar</a>
+							</div>
+							<div class="btn__group">
+								<a href="/products/delete/<%= producto.id %>">Eliminar</a>
+							</div>
+						<% } %>
 					</div>
 				</div>
 			</article>

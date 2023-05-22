@@ -1,6 +1,8 @@
 let express = require("express");
 const mainController = require("../controllers/mainControllers");
 const userValidator = require('../middlewares/userValidator');
+const adminMiddleware = require('../middlewares/adminMiddleware');
+
 
 let app = express()
 
@@ -15,6 +17,6 @@ router.get("/", mainController.home);
 
 router.get("/carritoDeCompras", mainController.carritoDeCompras);
 router.get("/fibrofacil", mainController.fibrofacil);
-router.get("/userList", mainController.userList);
+router.get("/userList",adminMiddleware, mainController.userList);
 
 module.exports = router
