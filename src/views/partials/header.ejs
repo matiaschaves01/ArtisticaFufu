@@ -37,18 +37,39 @@
     
     <div class="container-navbar">
         <nav class="navbar container">
-            <i class="fa-solid fa-bars"></i>
-            <ul class="menu">
+            <button class="burger-menu" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+<ul class="burgermenu-list" id="b-menu">
                 <li><a href="#">Pinturas</a></li>
                 <li><a href="/fibrofacil">Fibrofacil</a></li>
                 <li><a href="#">Más</a></li>
                 <% if (locals.userIsAdmin) { %>
-                    <li><a href="/userList">usuarios</a></li>
+                    <li><a href="/userList">Usuarios</a></li>
                 <% } %>
                 <% if (locals.userIsAdmin) { %>
                     <li><a href="/admin">Admin</a></li>
                 <% } %>
             </ul>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+            <script>
+              function toggleMenu() {
+                var menu = document.getElementById("b-menu");
+                menu.classList.toggle("show");
+              }
+            </script>
+            
+                        <ul class="menu">
+                            <li><a href="#">Pinturas</a></li>
+                            <li><a href="/fibrofacil">Fibrofacil</a></li>
+                            <li><a href="#">Más</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <% if (locals.userIsAdmin) { %>
+                                <li><a href="/userList">Usuarios</a></li>
+                            <% } %>
+                            <% if (locals.userIsAdmin) { %>
+                                <li><a href="/admin">Admin</a></li>
+                            <% } %>
+                        </ul>
 
             <form class="search-form">
                 <input type="search" placeholder="Buscar..." />
