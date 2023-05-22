@@ -10,7 +10,7 @@
                 <form id= "formulario" method="POST" action="/user/edit/<%= user.id %>?_method=PUT" enctype="multipart/form-data">
                     <div class="input-box-edit">  
                         <label for="name">Nombre</label>
-                        <input value="<%= user.name %>" type="text" name="name">
+                        <input value="<%= user.name %>" type="text" name="name" id="nombre">
                         <div id="errorNombre"></div>
                             <% if (locals.error && error.nombre) { %>
                             <p><%= error.nombre.msg %></p>
@@ -19,7 +19,7 @@
 
                     <div class="input-box-edit">
                         <label for="name">Apellido</label>
-                        <input value="<%= user.lastname %>" type="text" name="lastname">
+                        <input value="<%= user.lastname %>" type="text" name="lastname" id="apellido">
                         <div id="errorApellido"></div>
                             <% if (locals.error && error.apellido) { %>
                             <p> <%= error.apellido.msg %> </p>
@@ -28,7 +28,7 @@
 
                     <div class="input-box-edit">
                         <label for="name">Nombre de usuario</label>
-                        <input value="<%= user.username %>" type="text" name="username">
+                        <input value="<%= user.username %>" type="text" name="username" id="nombreUsuario">
                         <div id="errorUsuario"></div>
                             <% if (locals.error && error.nombreUsuario) { %>
                             <p> <%= error.nombreUsuario.msg %> </p>
@@ -37,7 +37,7 @@
 
                     <div class="input-box-edit">
                         <label for="name">Telefono</label>
-                        <input value="<%= user.phone %>" type="number" name="phone">
+                        <input value="<%= user.phone %>" type="number" name="phone" id="telefono">
                         <div id="errorTelefono"></div>
                             <% if (locals.error && error.numeroTelefono) { %>
                             <p> <%= error.numeroTelefono.msg %> </p>
@@ -46,7 +46,7 @@
 
                     <div class="input-box-edit">
                         <label for="number">Email</label>
-                        <input value="<%= user.email %>" type="text" name="email">
+                        <input value="<%= user.email %>" type="text" name="email" id="email">
                         <div id="errorMail"></div>
                             <% if (locals.error && error.emailRegistro) { %>
                             <p> <%= error.emailRegistro.msg %> </p>
@@ -55,14 +55,14 @@
 
                     <div class="input-box-edit">
                         <label for="name">Seleccionar una imagen</label>
-                        <input value="<%= user.image %>" type="file" id="file" name="image">
+                        <input value="<%= user.image %>" type="file" id="file" name="image" id="image">
                         <div id="errorImage"></div>
                             <% if (locals.error && error.image) { %>
                             <p> <%= error.image.msg %> </p>
                             <% } %>
                     </div>
 
-                    <button id="update-btn" class="cssbuttons-io-button"> Guardar cambios
+                    <button id="update-btn" type="submit" class="cssbuttons-io-button"> Guardar cambios
                         <div class="icon">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"></path></svg>
                         </div>
