@@ -8,8 +8,10 @@
       <i class="fa-solid fa-paintbrush"></i>
       <h1 class="logo"><a href="/">Artistica Fufu</a></h1>
     </div>
+
     <div class="container-register">
       <div class="title">Creá tu cuenta</div><br>
+
       <div class="content">
         <form id="formulario" action="/register" method="post" enctype="multipart/form-data">
           <div class="user-details">
@@ -66,6 +68,11 @@
               <span class="details">Numero de Telefono</span>
               <input type="text" placeholder="Ingrese numero" name="numeroTelefono" id="numeroTelefono">
               <div id="errorTelefono"></div>
+                  <% if (locals.error && error.numeroTelefono) { %>
+                    <p>
+                      <%= error.numeroTelefono.msg %>
+                </p>
+                <% } %>
             </div>
 
             <div class="input-box">
@@ -86,6 +93,7 @@
             <div class="input-box">
               <span class="details">Ingrese una imagen</span>
               <input type="file" placeholder="Ingrese nombre" name="image" id="image">
+              <div id="errorImage"></div>
               <% if (locals.error && error.image) { %>
                 <p>
                   <%= error.image.msg %>
@@ -110,9 +118,11 @@
             <a href="/login">Ingresá con tu cuenta</a>
           </div>
       </div>
+
       <div class="button"class="cyberpunk-button"></div>
         <input type="submit" value="Registrarse" class="cyberpunk-button">
       </div>
+
       </form>
     </div>
     </div>

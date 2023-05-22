@@ -3,42 +3,80 @@
     <%- include('../partials/head.ejs')%>
     <%- include('../partials/header.ejs')%>
   
-<body>       
-<main class="create-user">  
-    <h1 class="title-user"><%= user.name %></h1>
-    
-    <div class="container-user-edit">
-            <div class="input-box-edit">  
-        <form method="POST" action="/user/edit/<%= user.id %>?_method=PUT" enctype="multipart/form-data">
-        <label for="name">Nombre:</label>
-                <input value="<%= user.name %>" type="text" name="name">
-            </div>
-            <div class="input-box-edit">
-                <label for="name">Apellido</label>
-                <input value="<%= user.lastname %>" type="text" name="lastname">
-            </div>
-            <div class="input-box-edit">
-                <label for="name">Nombre de usuario</label>
-                <input value="<%= user.username %>" type="text" name="username">
-            </div>
-            <div class="input-box-edit">
-                <label for="name">Telefono</label>
-                <input value="<%= user.phone %>" type="number" name="phone">
-            </div>
-            <div class="input-box-edit">
-                <label for="number">Email</label>
-                <input value="<%= user.email %>" type="text" name="email">
-            </div>
-            <div class="input-box-edit">
-                <label for="name">Seleccionar una imagen</label>
-                <input type="file" id="file" name="image">
-            </div>
-            <button id="update-btn" class="cssbuttons-io-button"> Guardar cambios
-                <div class="icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"></path></svg>
-                </div>
-            </button>
+    <body>       
+        <main class="create-user">  
+            <div class="container-user-edit">
+                <h2>Mi perfil</h2>
+                <form id= "formulario" method="POST" action="/user/edit/<%= user.id %>?_method=PUT" enctype="multipart/form-data">
+                    <div class="input-box-edit">  
+                        <label for="name">Nombre</label>
+                        <input value="<%= user.name %>" type="text" name="name">
+                        <div id="errorNombre"></div>
+                            <% if (locals.error && error.nombre) { %>
+                            <p><%= error.nombre.msg %></p>
+                            <% } %>
+                    </div>
+
+                    <div class="input-box-edit">
+                        <label for="name">Apellido</label>
+                        <input value="<%= user.lastname %>" type="text" name="lastname">
+                        <div id="errorApellido"></div>
+                            <% if (locals.error && error.apellido) { %>
+                            <p> <%= error.apellido.msg %> </p>
+                            <% } %>
+                    </div>
+
+                    <div class="input-box-edit">
+                        <label for="name">Nombre de usuario</label>
+                        <input value="<%= user.username %>" type="text" name="username">
+                        <div id="errorUsuario"></div>
+                            <% if (locals.error && error.nombreUsuario) { %>
+                            <p> <%= error.nombreUsuario.msg %> </p>
+                            <% } %>
+                    </div>
+
+                    <div class="input-box-edit">
+                        <label for="name">Telefono</label>
+                        <input value="<%= user.phone %>" type="number" name="phone">
+                        <div id="errorTelefono"></div>
+                            <% if (locals.error && error.numeroTelefono) { %>
+                            <p> <%= error.numeroTelefono.msg %> </p>
+                            <% } %>
+                    </div>
+
+                    <div class="input-box-edit">
+                        <label for="number">Email</label>
+                        <input value="<%= user.email %>" type="text" name="email">
+                        <div id="errorMail"></div>
+                            <% if (locals.error && error.emailRegistro) { %>
+                            <p> <%= error.emailRegistro.msg %> </p>
+                            <% } %>
+                    </div>
+
+                    <div class="input-box-edit">
+                        <label for="name">Seleccionar una imagen</label>
+                        <input value="<%= user.image %>" type="file" id="file" name="image">
+                        <div id="errorImage"></div>
+                            <% if (locals.error && error.image) { %>
+                            <p> <%= error.image.msg %> </p>
+                            <% } %>
+                    </div>
+
+                    <button id="update-btn" class="cssbuttons-io-button"> Guardar cambios
+                        <div class="icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="none" d="M0 0h24v24H0z"></path><path fill="currentColor" d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"></path></svg>
+                        </div>
+                    </button>
+                </form>
+
+                <div id="error"></div>
+
             </div>
         </main>
-</body>
+    </body>
+
+    <script src="/js/editProfileValidation.js"></script>
+
+    <%- include('../partials/footer.ejs') %>
+
 </html>
