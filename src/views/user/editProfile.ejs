@@ -37,7 +37,7 @@
 
                     <div class="input-box-edit">
                         <label for="name">Telefono</label>
-                        <input value="<%= user.phone %>" type="number" name="phone" id="telefono">
+                        <input value="<%= user.phone %>" type="number" name="phone" id="numeroTelefono">
                         <div id="errorTelefono"></div>
                             <% if (locals.error && error.numeroTelefono) { %>
                             <p> <%= error.numeroTelefono.msg %> </p>
@@ -55,7 +55,7 @@
 
                     <div class="input-box-edit">
                         <label for="name">Seleccionar una imagen</label>
-                        <input value="<%= user.image %>" type="file" id="file" name="image" id="image">
+                        <input value="<%= user.image %>" type="file" id="file" name="image" id="imagen">
                         <div id="errorImage"></div>
                             <% if (locals.error && error.image) { %>
                             <p> <%= error.image.msg %> </p>

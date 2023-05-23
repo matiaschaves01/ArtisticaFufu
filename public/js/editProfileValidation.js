@@ -84,7 +84,7 @@ formulario.addEventListener("submit", (e)=>{
         e.preventDefault();
         mostrarErrorTelefono("Debes ingresar un número de teléfono válido")
     }
-    if (formulario.emailRegistro.value.length < 5) {
+    if (formulario.email.value.length < 5) {
         e.preventDefault();
         mostrarErrorMail("Debes ingresar un email válido")
     }
