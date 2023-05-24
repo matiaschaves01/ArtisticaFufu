@@ -24,45 +24,14 @@ body {
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
-}
-
-.seccion-perfil-usuario .perfil-usuario-header {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    background: linear-gradient(#43897a, transparent);
-    margin-bottom: 1.25rem;
-    
+    margin-top: 15px;
 }
 
 .seccion-perfil-usuario .perfil-usuario-portada {
     display: block;
     position: relative;
-    width: 90%;
     height: 17rem;
-    background-image: linear-gradient(45deg, #c45fb5, #89437f);
     border-radius: 0 0 20px 20px;
-    /*
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    */
-}
-
-.seccion-perfil-usuario .perfil-usuario-portada .boton-portada {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    border: 0;
-    border-radius: 8px;
-    padding: 12px 25px;
-    background-color: rgba(0, 0, 0, .5);
-    color: #fff;
-    cursor: pointer;
-}
-
-.seccion-perfil-usuario .perfil-usuario-portada .boton-portada i {
-    margin-right: 1rem;
 }
 
 .seccion-perfil-usuario .perfil-usuario-avatar {
@@ -76,7 +45,7 @@ body {
     border-radius: 50%;
     box-shadow: 0 0 12px rgba(0, 0, 0, .2);
     position: absolute;
-    bottom: -40px;
+    bottom: -20px;
     left: calc(50% - 90px);
     z-index: 1;
 }
@@ -114,7 +83,6 @@ body {
     display: block;
     width: 100%;
     font-size: 1.75em;
-    margin-bottom: 0.5rem;
 }
 
 .seccion-perfil-usuario .perfil-usuario-body .texto {
@@ -122,25 +90,29 @@ body {
     font-size: 0.95em;
 }
 
-.seccion-perfil-usuario .perfil-usuario-footer,
-.seccion-perfil-usuario .perfil-usuario-bio {
+.seccion-perfil-usuario .perfil-usuario-bio{
     display: flex;
     flex-wrap: wrap;
-    /* padding: 1.5rem 2rem; */
-    padding: 30px;
+    padding: 15px;
     box-shadow: 0 0 12px rgba(0, 0, 0, .2);
     background-color: #fff;
     border-radius: 15px;
-    width: 100%;
-}
-
-.seccion-perfil-usuario .perfil-usuario-bio {
+    width: 65%;
+    margin-bottom: 20px;
     margin-bottom: 1.25rem;
+    text-align: center;
+}
+.seccion-perfil-usuario .perfil-usuario-footer {
+    padding-top: 20px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, .2);
+    background-color: #fff;
+    border-radius: 15px;
+    width: 65%;
+    margin-bottom: 30px;
     text-align: center;
 }
 
 .seccion-perfil-usuario .lista-datos {
-    width: 50%;
     list-style: none;
 }
 
@@ -180,9 +152,7 @@ body {
 }
 
 .container-profile{
-    display: flex;
-    padding: 30px;
-    margin: 12px;
+    padding-top: 25px;
 }
 
 .btn-logout {
@@ -195,7 +165,6 @@ body {
     border-radius: 0.4em;
     box-shadow: 0.1em 0.1em;
     margin: 12px;
-    margin-right: 50px;
   }
   
   .btn-logout:hover {
