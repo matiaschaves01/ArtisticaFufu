@@ -44,6 +44,7 @@ app.use(cors({
     origin: '*'
 }))
 
+
 // Routes
 app.use(mainRouters);
 app.use(userRoutes);
@@ -53,12 +54,14 @@ app.use('/products', productRoutes);
 app.use('/api/user', userApiRoutes);
 app.use('/api/products', productApiRoutes);
 
+app.use((req, res, next) => {
+    res.status(404).render('error', {
+        css: null,
+        title: 'Error'
+    });
+    next()
+});
 app.listen(PORT, function () {
     console.log(`Server running on http://localhost:${PORT}`);
 });
 
-
-// Error 404
-// app.use((req, res, next) => {
-//     res.status(404).render('error');
-// });

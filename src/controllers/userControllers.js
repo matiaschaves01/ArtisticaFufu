@@ -180,7 +180,7 @@ const userController = {
                 image: req.file? req.file.filename : image.image
             },{
                 where: {
-                    id: req.params.id
+                    id: image.id
                 }
             })
             const user = await db.User.findByPk(req.params.id)
@@ -191,7 +191,6 @@ const userController = {
             if (req.session.admin) {
                 req.session.admin = user
             }
-            // console.log(userUpdate);
             res.redirect('/');
         } catch (error) {
             console.log(error);
