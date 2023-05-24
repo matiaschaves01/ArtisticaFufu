@@ -19,12 +19,12 @@
                 <a href="/login"> <i class="fa-solid fa-user"></i></a> 
               <% } %>
 
-              <% if (locals.userIsAdmin) { %>
-                <a href="/profile"><img class="user-icon" src="/images/users/<%= locals.admin.image %>" alt=""> </a> 
-              <% } %>
+            
+
               <% if (locals.userIsLogged) { %>
                 <a href="/profile"><img class="user-icon" src="/images/users/<%= locals.userLogged?.image %>" alt=""> </a> 
               <% } %>
+
               <a href="/carritoDeCompras"><i class="fa-solid fa-basket-shopping"></i></a>
                 <div class="content-shopping-cart">
                     <!-- <span class="text">Carrito</span>
@@ -43,10 +43,7 @@
                 <li><a href="/fibrofacil">Fibrofacil</a></li>
                 <li><a href="#">Más</a></li>
                 <% if (locals.userIsAdmin) { %>
-                    <li><a href="/userList">Usuarios</a></li>
-                <% } %>
-                <% if (locals.userIsAdmin) { %>
-                    <li><a href="/admin">Admin</a></li>
+                    <li><a href="/products">Admin</a></li>
                 <% } %>
             </ul>
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
@@ -62,10 +59,7 @@
                             <li><a href="#">Pinturas</a></li>
                             <li><a href="/fibrofacil">Fibrofacil</a></li>
                             <li><a href="#">Más</a></li>
-                            <li><a href="#">Blog</a></li>
-                            <% if (locals.userIsAdmin) { %>
-                                <li><a href="/userList">Usuarios</a></li>
-                            <% } %>
+                            <li><a href="#">Blog</a></li>                
                             <% if (locals.userIsAdmin) { %>
                                 <li><a href="/admin">Admin</a></li>
                             <% } %>
