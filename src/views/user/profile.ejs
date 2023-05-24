@@ -43,7 +43,7 @@
                         <i class="icono fas fa-building"></i> 
                         <label for="">Email: <%= user.email %></label>
                         <div class="container-profile">
-                            <a href="/user/edit/<%= user.id %>"> <button class="btn-logout" type="submit">Editar datos</button></a>
+                            <a href="/user/edit/<%= user.id %>"> <button class="btn-edit" type="submit">Editar datos</button></a>
                             <form action="/logout" method="post">
                                 <button class="btn-logout" type="submit">Cerrar sesión</button>
                             </form>
