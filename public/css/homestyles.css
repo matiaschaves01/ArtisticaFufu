@@ -84,7 +84,7 @@ main section img {
 }
 .boton-create a {
 	color: black;
-	border: 1px solid black;
+	background-color: #c4ab5f;
 	border-radius: 5px;
 	padding: 0.8rem;
 	text-decoration: none;
@@ -92,7 +92,8 @@ main section img {
 }
   
 .boton-create a:hover{
-	background-color: #c4ab5f;
+	border: 1px solid #c4ab5f;
+	background-color: white;
 }
 
 .container{

@@ -158,8 +158,8 @@ body {
 }
 
 .btn-edit {
-    background-color: #5fc4ae;
-    color: white;
+    background-color: #c4ab5f;
+    color: black;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -168,7 +168,8 @@ body {
     font-size: 1.5rem;
   }
   .btn-edit:hover {
-    background-color: #4ca095;
+    background-color: white;
+    border: 1px solid #c4ab5f;
   }
 
 .btn-logout {
