@@ -1,39 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<body>
+  <body>
     <%- include('../partials/head.ejs') %> 
-<%- include('../partials/header.ejs') %> 
+    <%- include('../partials/header.ejs') %> 
 
-<h1 class="index-h1">Listado de productos</h1>
+  <br>
+  <h1 class="index-h1">Listado de productos</h1>
 
-<a href="./products/create"><button>Crear producto</button></a>
+  <div class="boton-create">
+    <a href="./products/create">Crear producto</a>
+  </div>
 
-<!-- listado de productos, se agrega todo lo que viene por JSON -->
-
-<% productsList.forEach(products => { %>
-<div class="container">
-    <div class="cart">
-      <div class="products">
-        <div class="product">
-          <img src="/images/products/<%= products.image %>" class="carrito-img">
-          <div class="product-info">
-            <h2 class="product-name"> <a href="/products/<%= products.id %>"><%= products.name %></a></h2>
-            <p class="product-remove">
-              <!-- <i class="fa fa-trash" aria-hidden="true"></i> -->
-                <a href="/products/edit/<%= products.id %>">Editar</a>
-                <span class="remove"></span>
-            </p>
-            <p class="product-edit">
+  <!-- listado de productos, se agrega todo lo que viene por JSON -->
+  <% productsList.forEach(products => { %>
+  <div class="container">
+      <div class="cart">
+        <div class="products">
+          
+          <div class="product">
+            <img src="/images/products/<%= products.image %>" class="carrito-img">
+            
+            <div class="product-info">
+              <h2 class="product-name"> <a href="/products/<%= products.id %>"><%= products.name %></a></h2>
+              
+              <p class="product-remove">
                 <!-- <i class="fa fa-trash" aria-hidden="true"></i> -->
-                <a id="delete-product" data-id="<%= products.id %>">Eliminar</a>
-                <span class="remove"></span>
-            </p>
+                  <a href="/products/edit/<%= products.id %>">Editar</a>
+                  <span class="remove"></span>
+              </p>
+
+              <p class="product-edit">
+                  <!-- <i class="fa fa-trash" aria-hidden="true"></i> -->
+                  <a id="delete-product" data-id="<%= products.id %>">Eliminar</a>
+                  <span class="remove"></span>
+              </p>
+
+            </div>
           </div>
-        </div>
-        <% }) %>
+  <% }) %>
 
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="/js/swissAlert.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        <script src="/js/swissAlert.js"></script>
-</body>
+  </body>
 </html>
