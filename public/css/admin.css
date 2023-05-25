@@ -1,8 +1,8 @@
 /* ------------------------------------------ ADMIN ------------------------------------------*/
 .div-botones-admin{
   text-align: center;
-  margin-top: 4%;
-  margin-bottom: 4%;
+  margin-top: 50px;
+  margin-bottom: 80px;
 }
 .botones-admin {
   background-color: #c6b1776d;
@@ -10,19 +10,18 @@
   color: black ;
   text-transform: uppercase;
   border-radius: 0.5rem;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-family: inherit;
   cursor: pointer;
   font-weight: 400;
   margin-left: 5%;
   margin-right: 5%;
-  padding: 5% 20%
+  padding: 3% 25%;
   }
 
-  /* .botones-admin:hover {
-  background-color: white;
-  color:#c4ab5f ;
-  } */
+.botones-admin:hover {
+  background-color: #c4ab5f;
+  }
 /* ------------------------------------------ ADMIN ------------------------------------------*/
 .create{
   display: grid;
