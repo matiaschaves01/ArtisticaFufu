@@ -9,6 +9,8 @@
             <h3>
                 <main class="create">
                     <div class="container-create">
+
+                        <h2>Crear producto</h2>
                         <form id= "formulario" method="post" action="/products/create" enctype="multipart/form-data">
                             
                             <div class="input-box underline">
@@ -21,7 +23,6 @@
                                     </p>
                                 <% } %>
                                 <div id="errorNombre"></div>
-                                <br>
                             </div>
                 
                             <div class="input-box">
@@ -84,7 +85,7 @@
                                 <div id="errorCategory"></div>
                             </div>
 
-                            <button class="cssbuttons-io-button"> Crear Producto
+                            <button class="cssbuttons-io-button"> Crear producto
                                 <div class="icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
                                         <path fill="none" d="M0 0h24v24H0z"></path>
@@ -95,15 +96,13 @@
                                 </div>
                             </button>
                             
-                        <div id="error"></div>
-
-                        </div>
-                    </h3>
-            </form>
-            </main>
+                            <div id="error"></div>
+                        </form>
+                    </div>
+                </main>
     </body>
+
     <%- include('../partials/footer.ejs') %>
     <script src="/js/createValidation.js"></script>
-
 
 </html>

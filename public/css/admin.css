@@ -22,7 +22,7 @@
 .botones-admin:hover {
   background-color: #c4ab5f;
   }
-/* ------------------------------------------ ADMIN ------------------------------------------*/
+/* ------------------------------ CREATE PRODUCT ------------------------------------------*/
 .create{
   display: grid;
   width: 100%;
@@ -31,6 +31,10 @@
   opacity: 0.9;
 }  
 
+.container-create h2{
+  text-align: center;
+}
+
 .container-create{
   background: #fff;
   max-width: 350px;
@@ -38,8 +42,8 @@
   padding: 15px;
   border-radius: 20px;
   box-shadow: 0 12px 22px rgba(0, 0, 0, 0.775);
-  margin-top: 25px; 
-  margin-bottom: 35px;
+  margin-top: 30px; 
+  margin-bottom: 30px;
 }
 .input-box{
   font-size: 15px;
@@ -66,8 +70,6 @@
   border-color: rgba(128, 128, 128, 0.855);
 }
 
-/* ------------------------------------------ BUTTON ------------------------------------------*/
-
 .cssbuttons-io-button {
   background: #5fc4ae;
   color: black;
@@ -78,7 +80,6 @@
   font-weight: 500;
   border-radius: 0.9em;
   border: none;
-  letter-spacing: 0.05em;
   display: flex;
   align-items: center;
   box-shadow: inset 0 0 1.6em -0.6em #5fc4ae;
@@ -122,31 +123,58 @@
 }
 
 
-/* ------------------------------------------ Edit ------------------------------------------*/
+/* ------------------------ EDIT PRODUCT ------------------------------------------*/
 
-.create-edit{
+.edit{
   display: flex;
   width: 100%;
   height: 100%;
   justify-content: center;
   opacity: 0.9;
 } 
+.container-edit h2{
+  text-align: center;
+  font-size: 18px;
+}
 
-.container-create-edit{
+.container-edit label{
+  font-size: 15px;
+}
+
+.container-edit{
   background: #fff;
   max-width: 350px;
   width: 380px;
   padding: 15px;
   border-radius: 20px;
   box-shadow: 0 12px 22px rgba(0, 0, 0, 0.775);
-  margin-top: 20px; 
-  margin-bottom: 20px;
+  margin-top: 30px; 
+  margin-bottom: 30px;
 }
 .input-box-edit{
   font-size: 15px;
   font-weight: bold;
-  padding: 15px;
-  margin: 8px;
   font-size: 16px;
   margin-top: 25px;
+}
+
+.container-edit form .title{
+  font-size: 30px;
+  font-weight: 600;
+  margin: 20px 0 10px 0;
+  position: relative;
+}
+
+.container-edit form .input-box-edit{
+  width: 100%;
+  height: 45px;
+  margin-top: 40px;
+  position: relative;
+}
+.container-edit form .input-box-edit input{
+  width: 100%;
+  height: 100%;
+  /* font-size: 16px; */
+  border: linear;
+  border-color: rgba(128, 128, 128, 0.855);
 }
