@@ -46,12 +46,10 @@
     justify-content: space-between;
     align-items: center;
     padding: 5rem 2px;
-    margin: 50px;
-    
 }
 .btn__group{
     display: inline-block;
-    background-color: #252525;
+    border: 1px solid black;
     padding: 1rem 1.2rem;
     font-weight: 500;
     font-size: 17px;
@@ -61,21 +59,18 @@
 }
 
 .btn__group a{
-	color: white;
+	color: black;
     text-decoration: none;
 }
 
 .btn__group:hover{
-	background: linear-gradient(to right,#5fc4ae 0%, #43897a 100%);
-   
+	background-color: #c4ab5f;
+	border: 1px solid white;
 }
 
-.addcart{
-    width: 185px;
-}
 .price{
-    font-weight: 700;
-    font-size: 20px;
+    font-size: 16px;
+    padding-top: 30px;
 }
 @media screen and (min-width:767px){
   .detalle-grid{
