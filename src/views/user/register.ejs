@@ -41,7 +41,7 @@
             </div>
 
             <div class="input-box">
-              <span class="details">Nombre de Usuario</span>
+              <span class="details">Nombre de usuario</span>
               <input type="text" placeholder="Ingrese usuario" name="nombreUsuario" id="nombreUsuario"
                 value="<%= locals.oldBody && oldBody.nombreUsuario? oldBody.nombreUsuario: '' %>">
                 <div id="errorUsuario"></div>
@@ -53,40 +53,41 @@
             </div>
 
             <div class="input-box">
-                  <span class="details">Email</span>
-                  <input type="email" placeholder="Ingrese email" name="emailRegistro" id="emailRegistro"
-                  value="<%= locals.oldBody && oldBody.emailRegistro? oldBody.emailRegistro: '' %>">
-                  <div id="errorMail"></div>
+                <span class="details">Email</span>
+                <input type="email" placeholder="Ingrese email" name="emailRegistro" id="emailRegistro"
+                value="<%= locals.oldBody && oldBody.emailRegistro? oldBody.emailRegistro: '' %>">
+                <div id="errorMail"></div>
                   <% if (locals.error && error.emailRegistro) { %>
                     <p>
                       <%= error.emailRegistro.msg %>
-                </p>
+                    </p>
                 <% } %>
             </div>
 
             <div class="input-box">
-              <span class="details">Numero de Telefono</span>
-              <input type="text" placeholder="Ingrese numero" name="numeroTelefono" id="numeroTelefono">
+              <span class="details">Número de teléfono</span>
+              <input type="text" placeholder="Ingrese número" name="numeroTelefono" id="numeroTelefono">
               <div id="errorTelefono"></div>
                   <% if (locals.error && error.numeroTelefono) { %>
                     <p>
                       <%= error.numeroTelefono.msg %>
-                </p>
+                    </p>
                 <% } %>
             </div>
 
             <div class="input-box">
               <span class="details">Contraseña</span>
               <input type="password" placeholder="Ingrese contraseña" name="passwordRegistro" id="passwordRegistro">
-              <% if (locals.error && error.passwordRegistro) { %>
-                <p>
-                  <%= error.passwordRegistro.msg %>
-                </p>
+              <div id="errorContraseña"></div>
+                <% if (locals.error && error.passwordRegistro) { %>
+                  <p>
+                    <%= error.passwordRegistro.msg %>
+                  </p>
                 <% } %>
             </div>
 
             <div class="input-box">
-              <span class="details">Confirme Contraseña</span>
+              <span class="details">Confirme contraseña</span>
               <input type="password" placeholder="Confirme contraseña" name="checkPassword" id="checkPassword">
             </div>
 
@@ -98,18 +99,10 @@
                 <p>
                   <%= error.image.msg %>
                 </p>
-                <% } %>
+              <% } %>
             </div>
 
           </div>
-          <!-- <div class="gender-details">
-            <span class="gender-title">Aceptar Términos y Condiciones</span>
-            <div class="category">
-              <label for="dot-1">
-                <span class="dot one"></span>
-                <span class="gender">Acepto</span>
-              </label>
-            </div> -->
 
           <div id="error"></div>
 
@@ -119,7 +112,7 @@
           </div>
       </div>
 
-      <div class="button" class="cyberpunk-button"></div>
+      <div class="button" class="cyberpunk-button">
         <input type="submit" value="Registrarse" class="cyberpunk-button">
       </div>
 

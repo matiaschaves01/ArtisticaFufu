@@ -52,6 +52,7 @@ body{
   font-size: 25px;
   font-weight: 500;
   position: relative;
+  text-align: center;
 }
 
 .content form .user-details{
@@ -62,7 +63,7 @@ body{
 }
 
 form .user-details .input-box{
-  margin-bottom: 15px;
+  margin-bottom: 25px;
   width: calc(100% / 2 - 20px);
 }
 
@@ -90,7 +91,7 @@ color: #000;
 
 .user-details .input-box input:focus,
 .user-details .input-box input:valid{
-  border-color: #9b59b6;
+  border-color: #5fc4ae;
 }
    
 form .gender-details .gender-title{
@@ -123,7 +124,6 @@ form .category label .dot{
 }
 
   .yatienecuenta{
-    margin-top: 35px;
     font-size: medium;
   }
   .yatienecuenta h6{
@@ -135,7 +135,6 @@ form .category label .dot{
    #dot-2:checked ~ .category label .two,
    #dot-3:checked ~ .category label .three{
      background: #9b59b6;
-     border-color: #d9d9d9;
    }
    form input[type="radio"]{
      display: none;
@@ -168,26 +167,27 @@ form .category label .dot{
   color: red !important;
 }
 
+.button{
+  text-align: center;
+  margin-top: 20px;
+}
+
 .cyberpunk-button {
-  background-color: #2f3640;
-  color: #fff;
-  border: 2px solid #c45fb5;
+  background-color: #c4ab5f;
+  color: black;
   border-radius: 5px;
   padding: 10px 15px;
   font-size: 16px;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: bold;
-  box-shadow: 2px 2px 10px #5fc4ae;
   transition: all 0.2s ease-in-out;
+  align-items: center;
+  border: none;
 }
 
 .cyberpunk-button:hover {
-  background-color: #5fc4ae;
-  color: #2f3640;
-  border-color: #2f3640;
-  box-shadow: 2px 2px 20px #2f3640;
-  transform: translateY(-2px);
+  background-color: white;
+  color: black;
+  border: 1px solid #c4ab5f;
 }
 
 
@@ -221,6 +221,7 @@ form .category label .dot{
         display: flex;
         justify-content: center;
         align-items: center;
+        margin-top: 25px;
       }
       .yatienecuenta a{
         margin-left: 3%;

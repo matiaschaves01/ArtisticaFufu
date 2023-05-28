@@ -139,23 +139,23 @@ formulario.addEventListener("keyup", ()=>{
     }
     if (formulario.apellido.value.length < 3) {
         e.preventDefault();
-        mostrarErrorApellido("Debes ingresar un apellido de mas de tres caracteres")
+        mostrarErrorApellido("Debes ingresar un apellido de más de tres caracteres")
     }
     if (formulario.emailRegistro.value.length < 5) {
         e.preventDefault();
-        mostrarErrorMail("Debes ingresar un email valido")
+        mostrarErrorMail("Debes ingresar un email válido")
     }
     if (formulario.numeroTelefono.value.length < 10) {
         e.preventDefault();
-        mostrarErrorTelefono("Debes ingresar un usuario de mas de diez caracteres")
+        mostrarErrorTelefono("Debes ingresar un usuario de más de diez caracteres")
     }
     if (formulario.nombreUsuario.value.length <3 ) {
         e.preventDefault();
-        mostrarErrorUsuario("Debes ingresar un usuario de mas de tres caracteres")
+        mostrarErrorUsuario("Debes ingresar un usuario de más de tres caracteres")
     }
     if (formulario.checkPassword.value.length <= 7) {
         e.preventDefault();
-        mostrarError("Debes ingresar una contraseña mayor a 8 caracteres")
+        mostrarErrorContraseña("Debes ingresar una contraseña mayor a 8 caracteres")
     }
     if (formulario.passwordRegistro.length <= 7) {
         e.preventDefault();
@@ -167,7 +167,6 @@ formulario.addEventListener("keyup", ()=>{
     }
 
 })
-
 
     if (inputEmpty.includes(true)) {
         e.preventDefault()
