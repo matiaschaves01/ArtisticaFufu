@@ -188,6 +188,10 @@ main section img {
 	text-align: center;
 }
 
+.product-edit a {
+	color: white;
+}
+
 .product-edit:hover{
 	background-color: red;
 	color: red;
