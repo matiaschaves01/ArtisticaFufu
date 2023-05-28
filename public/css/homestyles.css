@@ -96,7 +96,12 @@ main section img {
 	background-color: white;
 }
 
-.container{
+.container-userlist{
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.container-products{
 	max-width: 1200px;
 	margin: 0 auto;
 }
@@ -267,7 +272,7 @@ main section img {
 @media screen and (max-width: 1220px){
 
 	.container{
-		max-width: 95%;
+		max-width: 100%;
 	}
 }
 
