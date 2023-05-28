@@ -116,6 +116,8 @@ body {
 
 .seccion-perfil-usuario .lista-datos {
     list-style: none;
+    text-align: left;
+    padding-left: 5%;
 }
 
 .seccion-perfil-usuario .lista-datos li {
@@ -155,6 +157,8 @@ body {
 
 .container-profile{
     padding-top: 25px;
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 .btn-edit {
@@ -217,6 +221,30 @@ body {
     font-size: 16px;
     margin-top: 25px;
   }
+
+  .update-btn {
+    background-color: #c4ab5f;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 1.5rem;
+  }
+  .update-btn:hover {
+    background-color: white;
+    border: 1px solid #c4ab5f;
+  }
+
+form ul li input{
+    width: 50%;
+    height: 100%;
+    font-size: 14px;
+    border: linear;
+    border-color: rgba(128, 128, 128, 0.855);
+  }
+
   /* ------------------------------------------ BUTTON ------------------------------------------*/
 
 .cssbuttons-io-button {

@@ -2,11 +2,114 @@
 <html lang="en">
     <%- include('../partials/head.ejs')%>
     <%- include('../partials/header.ejs')%>
+
+<body>
+    <section class="seccion-perfil-usuario">
+            <div class="perfil-usuario-portada">
+                <div class="perfil-usuario-avatar">
+                    <img src="/images/users/<%= user.image %>" alt="img-avatar">
+                    <form action="" method="post">
+                    </form>
+                </div>
+            </div>
+
+        <div class="perfil-usuario-body">
+
+            <div class="perfil-usuario-bio">
+                <h3 class="titulo">
+                    Editá tu usuario
+                </h3>
+            </div>
+
+            <div class="perfil-usuario-footer">
+
+                <form id= "formulario" method="POST" action="/user/edit/<%= user.id %>?_method=PUT" enctype="multipart/form-data">
+
+                    <ul class="lista-datos">
+                        <li>
+                            <i class="icono fas fa-map-signs"></i>
+                            <label for="name-lastname">Nombre:</label>
+                            <input value="<%= user.name %>" type="text" name="name" id="nombre"> 
+                            <div id="errorNombre"></div>
+                                <% if (locals.error && error.nombre) { %>
+                                <p><%= error.nombre.msg %></p>
+                                <% } %>
+                        </li>
+                        
+                        <li>
+                            <i class="icono fas fa-map-signs"></i>
+                            <label for="name-lastname">Apellido:</label>
+                            <input value="<%= user.lastname %>" type="text" name="lastname" id="apellido"> 
+                            <div id="errorApellido"></div>
+                                <% if (locals.error && error.apellido) { %>
+                                <p><%= error.apellido.msg %></p>
+                                <% } %>
+                        </li>
+                        
+                        <li>
+                            <i class="icono fas fa-user"></i>
+                            <label for="">Nombre de usuario:</label>
+                            <input value="<%= user.username %>" type="text" name="username" id="nombreUsuario">
+                            <div id="errorUsuario"></div>
+                                <% if (locals.error && error.nombreUsuario) { %>
+                                <p> <%= error.nombreUsuario.msg %> </p>
+                                <% } %>
+                        </li>
+                        <li>
+                            <i class="icono fas fa-phone-alt"></i>
+                            <label for="">Teléfono:</label>
+                            <input value="<%= user.phone %>" type="number" name="phone" id="numeroTelefono">
+                            <div id="errorTelefono"></div>
+                                <% if (locals.error && error.numeroTelefono) { %>
+                                <p> <%= error.numeroTelefono.msg %> </p>
+                                <% } %>
+                        </li>
+                        <li> 
+                            <i class="icono fas fa-envelope"></i>
+                            <label for="">Email:</label>
+                            <input value="<%= user.email %>" type="text" name="email" id="email">
+                            <div id="errorMail"></div>
+                                <% if (locals.error && error.emailRegistro) { %>
+                                <p> <%= error.emailRegistro.msg %> </p>
+                                <% } %>
+                        </li> 
+
+                            <div class="container-profile">
+                                <button class="update-btn" type="submit">Confirmar datos</button>
+                            </div>
+                    </ul>
+                </form>
+
+                <div id="error"></div>
+            </div>
+        </div>
+    </section>
+</body>
+
+<script src="/js/editProfileValidation.js"></script>
+
+<%- include('../partials/footer.ejs') %> 
+
+</html>
+
+
+
+
+
+
+
+----------
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head.ejs')%>
+    <%- include('../partials/header.ejs')%>
   
     <body>       
         <main class="create-user">  
             <div class="container-user-edit">
                 <h2>Mi perfil</h2>
+
                 <form id= "formulario" method="POST" action="/user/edit/<%= user.id %>?_method=PUT" enctype="multipart/form-data">
                     <div class="input-box-edit">  
                         <label for="name">Nombre</label>
@@ -77,6 +180,5 @@
 
     <script src="/js/editProfileValidation.js"></script>
 
-    <%- include('../partials/footer.ejs') %>
 
-</html>
+</html> -->

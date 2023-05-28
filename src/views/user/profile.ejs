@@ -29,27 +29,32 @@
                 <ul class="lista-datos">
                     <li>
                         <i class="icono fas fa-map-signs"></i>
-                        <label for="name-lastname">Nombre: <%= user.name %> <%= user.lastname %></label> 
+                        <label for="name-lastname">Nombre: <%= user.name %></label> 
                     </li>
                     <li>
-                        <i class="icono fas fa-phone-alt"></i>
+                        <i class="icono fas fa-map-signs"></i>
+                        <label for="name-lastname">Apellido: <%= user.lastname %></label> 
+                    </li>
+                    <li>
+                        <i class="icono fas fa-user"></i>
                         <label for="">Nombre de usuario: <%= user.username %></label>
                     </li>
                     <li>
-                        <i class="icono fas fa-briefcase"></i> 
+                        <i class="icono fas fa-phone-alt"></i> 
                         <label for="">Teléfono: <%= user.phone %></label>
                     </li>
                     <li>
-                        <i class="icono fas fa-building"></i> 
+                        <i class="icono fas fa-envelope"></i>
                         <label for="">Email: <%= user.email %></label>
-                        <div class="container-profile">
-                            <a href="/user/edit/<%= user.id %>"> <button class="btn-edit" type="submit">Editar datos</button></a>
-                            <form action="/logout" method="post">
-                                <button class="btn-logout" type="submit">Cerrar sesión</button>
-                            </form>
-                        </div>
                     </li>
                 </ul>
+
+                <div class="container-profile">
+                    <a href="/user/edit/<%= user.id %>"> <button class="btn-edit" type="submit">Editar datos</button></a>
+                    <form action="/logout" method="post">
+                        <button class="btn-logout" type="submit">Cerrar sesión</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
