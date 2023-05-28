@@ -16,7 +16,9 @@
   font-weight: 400;
   margin-left: 5%;
   margin-right: 5%;
-  padding: 3% 25%;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  width: 50%
   }
 
 .botones-admin:hover {
