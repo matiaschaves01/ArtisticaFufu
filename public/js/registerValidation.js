@@ -15,6 +15,7 @@ let contentErrorApellido = document.getElementById('errorApellido');
 let contentErrorMail = document.getElementById('errorMail');
 let contentErrorUsuario = document.getElementById('errorUsuario');
 let contentErrorTelefono = document.getElementById('errorTelefono');
+let contentErrorContrasena = document.getElementById('errorContrasena');
 let contentErrorImagen = document.getElementById('errorImagen');
 
 function mostrarError(error) {
@@ -34,6 +35,9 @@ function mostrarErrorUsuario(error) {
 }
 function mostrarErrorTelefono(error) {
     contentErrorTelefono.innerHTML = `<p class='errorTelefono'>${error}</p>`
+}
+function mostrarErrorContraseña(error) {
+    contentErrorContrasena.innerHTML = `<p class='errorContrasena'>${error}</p>`
 }
 function mostrarErrorImagen(error) {
     contentErrorImagen.innerHTML = `<p class='errorImagen'>${error}</p>`
@@ -135,7 +139,7 @@ formulario.addEventListener("keyup", ()=>{
   formulario.addEventListener("submit", (e)=>{
     if (formulario.nombre.value.length < 3) {
         e.preventDefault();
-        mostrarErrorNombre("Debes ingresar un nombre de mas de tres caracteres")
+        mostrarErrorNombre("Debes ingresar un nombre de más de tres caracteres")
     }
     if (formulario.apellido.value.length < 3) {
         e.preventDefault();
@@ -153,9 +157,9 @@ formulario.addEventListener("keyup", ()=>{
         e.preventDefault();
         mostrarErrorUsuario("Debes ingresar un usuario de más de tres caracteres")
     }
-    if (formulario.checkPassword.value.length <= 7) {
+    if (formulario.passwordRegistro.value.length <= 7) {
         e.preventDefault();
-        mostrarErrorContraseña("Debes ingresar una contraseña mayor a 8 caracteres")
+        mostrarErrorContrasena("Debes ingresar una contraseña mayor a 8 caracteres")
     }
     if (formulario.passwordRegistro.length <= 7) {
         e.preventDefault();
