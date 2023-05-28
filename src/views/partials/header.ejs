@@ -19,6 +19,10 @@
                 <a href="/login"> <i class="fa-solid fa-user"></i></a> 
               <% } %>
 
+              <% if (locals.userIsAdmin) { %>
+                <a href="/profile"><img class="user-icon" src="/images/users/<%= locals.admin.image %>" alt=""> </a> 
+              <% } %>
+
               <% if (locals.userIsLogged) { %>
                 <a href="/profile"><img class="user-icon" src="/images/users/<%= locals.userLogged?.image %>" alt=""> </a> 
               <% } %>
