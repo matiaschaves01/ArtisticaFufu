@@ -22,9 +22,7 @@
                 value="<%= locals.oldBody && oldBody.nombre? oldBody.nombre: '' %>">
                 <div id="errorNombre"></div>
                 <% if (locals.error && error.nombre) { %>
-                <p>
-                  <%= error.nombre.msg %>
-                </p>
+                <p><%= error.nombre.msg %></p>
                 <% } %>
             </div>
 
@@ -34,9 +32,7 @@
                 value="<%= locals.oldBody && oldBody.apellido? oldBody.apellido: '' %>">
                 <div id="errorApellido"></div>
                 <% if (locals.error && error.apellido) { %>
-                  <p>
-                    <%= error.apellido.msg %>
-                  </p>
+                  <p><%= error.apellido.msg %></p>
                   <% } %>
             </div>
 
@@ -46,9 +42,7 @@
                 value="<%= locals.oldBody && oldBody.nombreUsuario? oldBody.nombreUsuario: '' %>">
                 <div id="errorUsuario"></div>
                 <% if (locals.error && error.nombreUsuario) { %>
-                  <p>
-                    <%= error.nombreUsuario.msg %>
-                  </p>
+                  <p><%= error.nombreUsuario.msg %></p>
                   <% } %>
             </div>
 
@@ -58,9 +52,7 @@
                 value="<%= locals.oldBody && oldBody.emailRegistro? oldBody.emailRegistro: '' %>">
                 <div id="errorMail"></div>
                   <% if (locals.error && error.emailRegistro) { %>
-                    <p>
-                      <%= error.emailRegistro.msg %>
-                    </p>
+                    <p><%= error.emailRegistro.msg %></p>
                 <% } %>
             </div>
 
@@ -69,9 +61,7 @@
               <input type="text" placeholder="Ingrese número" name="numeroTelefono" id="numeroTelefono">
               <div id="errorTelefono"></div>
                   <% if (locals.error && error.numeroTelefono) { %>
-                    <p>
-                      <%= error.numeroTelefono.msg %>
-                    </p>
+                    <p><%= error.numeroTelefono.msg %></p>
                 <% } %>
             </div>
 
@@ -80,9 +70,7 @@
               <input type="password" placeholder="Ingrese contraseña" name="passwordRegistro" id="passwordRegistro">
               <div id="errorContrasena"></div>
                 <% if (locals.error && error.passwordRegistro) { %>
-                  <p>
-                    <%= error.passwordRegistro.msg %>
-                  </p>
+                  <p><%= error.passwordRegistro.msg %></p>
                 <% } %>
             </div>
 
@@ -91,9 +79,7 @@
               <input type="password" placeholder="Confirme contraseña" name="checkPassword" id="checkPassword">
               <div id="errorContraseña"></div>
               <% if (locals.error && error.passwordRegistro) { %>
-                <p>
-                  <%= error.passwordRegistro.msg %>
-                </p>
+                <p><%= error.passwordRegistro.msg %></p>
               <% } %>
             </div>
 
@@ -102,15 +88,13 @@
               <input type="file" placeholder="Ingrese nombre" name="image" id="image">
               <div id="errorImage"></div>
                 <% if (locals.error && error.image) { %>
-                  <p>
-                    <%= error.image.msg %>
-                  </p>
+                  <p><%= error.image.msg %></p>
                 <% } %>
             </div>
 
           </div>
 
-          <div id="error"></div>
+          <div class="error-bott" id="error"></div>
 
           <div class="yatienecuenta">
             <h6>¿Ya tenés una cuenta?</h6>

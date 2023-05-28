@@ -39,7 +39,7 @@ body{
 }
 
 .container-register{
-  max-width: 700px;
+  max-width: 900px;
   width: 100%;
   background-color: #fff;
   padding: 25px 30px;
@@ -165,9 +165,10 @@ form .category label .dot{
 .content form .input-box p{
       font-size: 12px;
       color: red;
+      font-weight: 400;
     }
   
-    #error {
+.error-bott {
       color: red;
     }
 /* .input-error{
