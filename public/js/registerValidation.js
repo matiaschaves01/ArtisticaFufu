@@ -151,7 +151,7 @@ formulario.addEventListener("keyup", ()=>{
     }
     if (formulario.numeroTelefono.value.length < 10) {
         e.preventDefault();
-        mostrarErrorTelefono("Debes ingresar un usuario de más de diez caracteres")
+        mostrarErrorTelefono("Debes ingresar un telefono de más de diez caracteres")
     }
     if (formulario.nombreUsuario.value.length <3 ) {
         e.preventDefault();

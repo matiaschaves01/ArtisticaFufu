@@ -173,6 +173,10 @@ form .input-box p {
   margin-top: 25px;
 }
 
+.container-edit.input-box-edit [name="description"]{
+ width: 20px;
+}
+
 .container-edit form .title{
   font-size: 30px;
   font-weight: 600;

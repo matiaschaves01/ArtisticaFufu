@@ -128,6 +128,7 @@
 	width: 100%;
 	font-family: inherit;
 	border-radius: 4px solid black;
+	margin: 8px;
 }
 
 .content input::-webkit-input-placeholder {
@@ -145,6 +146,7 @@
 	font-family: inherit;
 	cursor: pointer;
 	font-weight: 600;
+	margin: 8px;
 }
 
 .content button:hover {
