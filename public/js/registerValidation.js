@@ -16,7 +16,7 @@ let contentErrorMail = document.getElementById('errorMail');
 let contentErrorUsuario = document.getElementById('errorUsuario');
 let contentErrorTelefono = document.getElementById('errorTelefono');
 let contentErrorContrasena = document.getElementById('errorContrasena');
-let contentErrorImagen = document.getElementById('errorImagen');
+let contentErrorImagen = document.getElementById('errorImage');
 
 function mostrarError(error) {
     contentError.innerHTML = `<p class='error'>${error}</p>`
@@ -40,7 +40,7 @@ function mostrarErrorContraseña(error) {
     contentErrorContrasena.innerHTML = `<p class='errorContrasena'>${error}</p>`
 }
 function mostrarErrorImagen(error) {
-    contentErrorImagen.innerHTML = `<p class='errorImagen'>${error}</p>`
+    contentErrorImagen.innerHTML = `<p class='errorImage'>${error}</p>`
 }
 
 // Validar el CADA ERROR EN EL EVENTO BLUR
@@ -125,11 +125,19 @@ function validarFormulario(evt) {
 formulario.addEventListener("keyup", ()=>{
     let password = document.querySelector("#passwordRegistro")
     let checkPassword = document.querySelector("#checkPassword")
+
+    let contentErrorContrasena = document.getElementById('errorContrasenaNoCoincide');
+
+function mostrarError(error) {
+    contentErrorContrasena.innerHTML = `<p class='errorContrasenaNoCoincide'>${error}</p>`
+}
     if (password.value == checkPassword.value) {
         password.style.borderBottomColor="green"
+        mostrarError("las contraseñas coinciden ;)")
     }
     else{
         password.style.borderBottomColor="red"
+        mostrarError("contraseña no coincide")
     }
     console.log(password.value == checkPassword.value, password.value, checkPassword.value);
     
@@ -159,16 +167,18 @@ formulario.addEventListener("keyup", ()=>{
     }
     if (formulario.passwordRegistro.value.length <= 7) {
         e.preventDefault();
-        mostrarErrorContrasena("Debes ingresar una contraseña mayor a 8 caracteres")
+        mostrarErrorContraseña("Debes ingresar una contraseña mayor a 8 caracteres")
     }
-    if (formulario.passwordRegistro.length <= 7) {
+    if (formulario.checkPassword.length <= 7) {
         e.preventDefault();
-        mostrarError("Debes ingresar una contraseña mayor a 8 caracteres")
+        mostrarErrorContraseña("Debes ingresar una contraseña mayor a 8 caracteres")
     }
-    if (formulario.imagen == "") {
+    console.log(formulario.image.value);
+    if (formulario.image.value == "") {
         e.preventDefault();
         mostrarErrorImagen("Debes ingresar una imagen")
     }
+   
 
 })
 

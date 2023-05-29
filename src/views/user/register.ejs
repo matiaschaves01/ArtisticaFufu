@@ -69,6 +69,7 @@
               <span class="details">Contraseña</span>
               <input type="password" placeholder="Ingrese contraseña" name="passwordRegistro" id="passwordRegistro">
               <div id="errorContrasena"></div>
+              
                 <% if (locals.error && error.passwordRegistro) { %>
                   <p><%= error.passwordRegistro.msg %></p>
                 <% } %>
@@ -78,6 +79,7 @@
               <span class="details">Confirme contraseña</span>
               <input type="password" placeholder="Confirme contraseña" name="checkPassword" id="checkPassword">
               <div id="errorContraseña"></div>
+              <div id="errorContrasenaNoCoincide"></div>
               <% if (locals.error && error.passwordRegistro) { %>
                 <p><%= error.passwordRegistro.msg %></p>
               <% } %>
@@ -87,8 +89,8 @@
               <span class="details">Ingrese una imagen</span>
               <input type="file" placeholder="Ingrese nombre" name="image" id="image">
               <div id="errorImage"></div>
-                <% if (locals.error && error.image) { %>
-                  <p><%= error.image.msg %></p>
+              <% if (locals.error && error.image) { %>
+                <p><%= error.image.msg %></p>
                 <% } %>
             </div>
 
