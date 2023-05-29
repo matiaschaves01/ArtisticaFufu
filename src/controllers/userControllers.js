@@ -174,7 +174,8 @@ const userController = {
             //  let id = req.session.userLogged.id || req.session.admin.id
             await db.User.update({
                 name: req.body.name,
-                email: req.body.email,
+                email: req.body.email, 
+                lastname: req.body.lastname,
                 username: req.body.username,
                 phone: req.body.phone,
                 image: req.file? req.file.filename : image.image
