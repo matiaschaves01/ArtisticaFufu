@@ -250,8 +250,10 @@ form ul li input{
     color: red;
   }
 
-  #error {
+  form ul #error {
     color: red;
+    font-size: 14px;
+    text-align: center;
   }
 
   /* ------------------------------------------ BUTTON ------------------------------------------*/
