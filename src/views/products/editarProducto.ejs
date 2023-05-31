@@ -54,12 +54,12 @@
                                 <label for="number">Precio</label>
                                 <input type="number" id="price" name="price"
                                 value="<%= product.price %>">
+                                <div id="errorPrice"></div>
                                 <% if (locals.error && error.price) { %>
                                     <p>
                                         <%= error.price.msg %>
                                     </p>
                                 <% } %>
-                                <div id="errorCantidad"></div>
                             </div>
 
                             <div class="input-box-edit">
