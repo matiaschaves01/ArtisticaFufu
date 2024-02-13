@@ -1,3 +1,7 @@
+drop database if exists `fufu_db`;
+create database if not exists `fufu_db`;
+use `fufu_db`;
+
 CREATE TABLE `products` (
    `id` INT AUTO_INCREMENT,
    `name` VARCHAR(255) NOT NULL,
